@@ -1,3 +1,5 @@
 <h1>Users#index</h1>
-<%= @users %>
+<% @users.each do |user| %>
+<%= user.name %>
+<% end %>
 <p>Find me in app/views/users/index.html.erb</p>
