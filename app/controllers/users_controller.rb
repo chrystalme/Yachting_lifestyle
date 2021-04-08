@@ -14,9 +14,9 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "#{@user.name} has been created successfully."
-      redirect_to root_path   
+      redirect_to root_path
     else
-      flash[:alert] = "Name field cannot be empty"
+      flash[:alert] = 'Name field cannot be empty'
       render :new
     end
   end
@@ -25,12 +25,9 @@ class UsersController < ApplicationController
     @user = user.find_by(id: session[:user_id]) if session[:user_id]
   end
 
-  def edit
-    
-  end
-  def destroy
-    
-  end
+  def edit; end
+
+  def destroy; end
 
   private
 
