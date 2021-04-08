@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    user = User.new
+    @user = User.new
   end
 
   def create
@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       flash[:notice] = "#{@user.name} has been created successfully."
       redirect_to root_path   
     else
+      flash[:alert] = "Name field cannot be empty"
       render :new
     end
   end
