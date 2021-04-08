@@ -1,6 +1,9 @@
-<h1>Users#index</h1>
-<% @users.each do |user| %>
-<%= user.name %>
-<% end %>
-<%= link_to "Log Out", log_out_path, method: :delete, class: 'btn btn-danger'%>
-<p>Find me in app/views/users/index.html.erb</p>
+<article class='container'>
+  <% Article.all.each do |article|%>
+  <header><%= article.title %></header>
+  <p>
+    <%= article.text %>
+  </p>
+  <caption><%=article.author.name %> </caption>
+  <article>
+    <% end %>
