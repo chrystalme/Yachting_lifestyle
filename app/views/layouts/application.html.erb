@@ -12,11 +12,27 @@
   <%= stylesheet_link_tag 'https://use.fontawesome.com/releases/v5.7.0/css/all.css' %>
 </head>
 
-<body class='mt-3'>
-  <nav class=''>
-    <%= show_flash %>
+<body class='mt-2'>
+  <nav class="navbar navbar-light d-flex justify-content-between">
+    <div class="container-fluid">
+      <%= link_to "Yatching Lifestyle", root_path, class: 'navbar-brand' %>
+      <div class="">
+        <a href="#" class="px-1">Home</a>
+        <a href="#" class="px-1">Sport</a>
+        <a href="#" class="px-1">Entertainment</a>
+        <a href="#" class="px-1">Magazine</a>
+        <a href="#" class="px-1">TV</a>
+      </div>
+      <div class="">
+        <%= show_header %>
+      </div>
 
-    <%= yield %>
+    </div>
+
+  </nav>
+  <%= show_flash %>
+
+  <%= yield %>
 </body>
 
 </html>
