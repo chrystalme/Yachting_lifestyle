@@ -9,8 +9,8 @@ module ApplicationHelper
   def show_errors(item)
     output = ''
     if item.errors.any?
-      item.errors.full_messages.each do |_msg|
-        output << "<div>#{msg}</div>"
+      item.errors.full_messages.each do |msg|
+        output << "<div class='input-group'>#{msg}</div>"
       end
     end
     output.html_safe
