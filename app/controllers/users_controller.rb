@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
+
   def new
     user = User.new
   end
@@ -17,6 +18,7 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
   def show
     @user = user.find_by(id: session[:user_id]) if session[:user_id]
   end
