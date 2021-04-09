@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-Rspec.describe User, type: :model do
+RSpec.describe User, type: :model do
   describe 'associations' do
-    it { shoud have_many(:articles) }
-    it { shoud have_many(:votes) }
+    it { should have_many(:articles) }
+    it { should have_many(:votes) }
   end
 end
