@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
 
     if @article.save
       flash[:notice] = "#{@article.title} has been created successfully."
-      redirect_to new_article_path
+      redirect_to root_path
     else
       render :new
     end
