@@ -10,7 +10,7 @@ module ApplicationHelper
     output = ''
     if item.errors.any?
       item.errors.full_messages.each do |msg|
-        output << "<div class='input-group'>#{msg}</div>"
+        output << "<div class='input-group p-3 mb-2 bg-danger text-white fs-6'>#{msg}</div>"
       end
     end
     output.html_safe

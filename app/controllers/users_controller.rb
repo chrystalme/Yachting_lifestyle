@@ -2,6 +2,11 @@ class UsersController < ApplicationController
   before_action :logged_in?, except: [:index]
   def index
     @users = User.all
+    respond_to do |format|
+      format.html
+      format.xml {render xml: @users}
+      format.json {render json: @users}
+    end
   end
 
   def new
