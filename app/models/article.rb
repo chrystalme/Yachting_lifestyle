@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
-  has_and_belongs_to_many :categories
+  has_many :article_categories
+  has_many :categories, through: :article_categories
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 
   has_one_attached :image
