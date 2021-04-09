@@ -1,11 +1,19 @@
 <article class='container'>
   <% Article.all.each do |article|%>
-  <header><%= article.title %></header>
+  <header class="card-header"><%= article.title %></header>
   <p>
     <%= article.text %>
-    <%= article.image.attach(params[:image]) %>
-    <%#= article.image.attached? %>
+    <% if article.image.attached? %>
+    <%=image_tag article.image %>
+
+    <% else %>
+
+
+    <small>No image found!</small>
+
+    <% end%>
+
   </p>
-  <caption><%=article.author.name %> </caption>
+  <caption class="pt-2"><%=article.author.name %> </caption>
   <article>
     <% end %>

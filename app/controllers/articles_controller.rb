@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = current_user.articles.build
-    @category_options = Category.all.map{|c| [c.name, c.id] }
+    @category_options = Category.all.map{ |c| [c.name, c.id] }
   end
 
   def create
