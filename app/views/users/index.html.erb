@@ -3,7 +3,8 @@
   <header><%= article.title %></header>
   <p>
     <%= article.text %>
-    <%= article.image.attach(params[:image])
+    <%= article.image.attach(params[:image]) %>
+    <%#= article.image.attached? %>
   </p>
   <caption><%=article.author.name %> </caption>
   <article>
