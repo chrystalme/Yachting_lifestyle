@@ -1,5 +1,11 @@
-<h1>Users#index</h1>
-<% @users.each do |user| %>
-<%= user.name %>
-<% end %>
-<p>Find me in app/views/users/index.html.erb</p>
+<article class='container'>
+  <% Article.all.each do |article|%>
+  <header><%= article.title %></header>
+  <p>
+    <%= article.text %>
+    <%= article.image.attach(params[:image]) %>
+    <%#= article.image.attached? %>
+  </p>
+  <caption><%=article.author.name %> </caption>
+  <article>
+    <% end %>

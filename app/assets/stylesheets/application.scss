@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+@import "../node_modules/bootstrap/scss/bootstrap";
+body {
+  background-color: $yellow-900;
+  padding: 5px;
+}
+nav {
+  background-color: $gray-100;
+  text-transform: uppercase;
+  a {
+    text-decoration: none;
+    color: grey;
+    font-size: small;
+  }
+}
+article {
+  background-color: $indigo-100;
+}
+footer {
+  background-color: $yellow-900;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  .item {
+    font-size: xx-small;
+  }
+}
