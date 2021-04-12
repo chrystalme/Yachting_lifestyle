@@ -4,7 +4,7 @@
   <p>
     <%= article.text %>
     <% if article.image.attached? %>
-    <%=image_tag article.image %>
+    <%=image_tag article.image.variant(resize_to_limit: [400, 400]) %>
 
     <% else %>
 
