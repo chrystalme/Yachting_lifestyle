@@ -1,19 +1,14 @@
 <article class='container'>
-  <% Article.all.each do |article|%>
-  <header class="card-header"><%= article.title %></header>
+  <% Article.all.each do |article| %>
+  <header class="card-header"><%#= article.title %></header>
   <p>
-    <%= article.text %>
+    <%#= article.text %>
     <% if article.image.attached? %>
     <%=image_tag article.image.variant(resize_to_limit: [400, 400]) %>
-
-    <% else %>
-
-
-    <small>No image found!</small>
-
+    <%# else %>
+    <!--- <small>No image found!</small>--->
     <% end%>
-
   </p>
-  <caption class="pt-2"><%=article.author.name %> </caption>
+  <caption class="pt-2"><%#=article.author.name %> </caption>
   <article>
     <% end %>

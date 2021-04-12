@@ -1,8 +1,8 @@
 module ApplicationHelper
   def show_flash
     output = ''
-    output << "<div>#{flash[:notice]}</div>" if flash[:notice]
-    output << "<div>#{flash[:alert]}</div>" if flash[:alert]
+    output << "<div class='input-group p-3 mb-2 bg-success text-white fs-6'>#{flash[:notice]}</div>" if flash[:notice]
+    output << "<div class='input-group p-3 mb-2 bg-danger text-white fs-6'>#{flash[:alert]}</div>" if flash[:alert]
     output.html_safe
   end
 

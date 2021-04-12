@@ -34,21 +34,21 @@
   </header>
   <%= show_flash %>
   <%= yield %>
-  <footer class='d-flex justify-content-between'>
-    <div class="container-fluid">
+  <footer class='container-fluid d-flex justify-content-between'>
+    <div class="">
       <%= link_to "Yatching Lifestyle", root_path, class: 'navbar-brand' %>
+    </div>
 
-      <div class="">
-        <a href="#" class="px-1">privacy policy</a>
-        <a href="#" class="px-1">terms &amp; Conditions </a>
-        <span class="px-1">Copyright 2021. All rights reserved</span>
-      </div>
-      <div class="">
-        <span> connect with us
-          <i class="px-1 fab fa-twitter"></i>
-          <i class="px-1 fab fa-instagram"></i>
-          <i class="px-1 fab fa-facebook"></i></span>
-      </div>
+    <div class="">
+      <a href="#" class="px-1">privacy policy</a>
+      <a href="#" class="px-1">terms &amp; Conditions </a>
+      <span class="px-1">Copyright 2021. All rights reserved</span>
+    </div>
+    <div class="">
+      <span> connect with us
+        <i class="px-1 fab fa-twitter"></i>
+        <i class="px-1 fab fa-instagram"></i>
+        <i class="px-1 fab fa-facebook"></i></span>
     </div>
   </footer>
 
