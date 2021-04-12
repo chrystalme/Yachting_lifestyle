@@ -1,14 +1,23 @@
-<article class='container'>
+<article>
   <% Article.all.each do |article| %>
-  <header class="card-header"><%#= article.title %></header>
-  <p>
-    <%#= article.text %>
-    <% if article.image.attached? %>
-    <%=image_tag article.image.variant(resize_to_limit: [400, 400]) %>
-    <%# else %>
-    <!--- <small>No image found!</small>--->
+  <div class="row">
+    <div class='col-3'>
+      <div class='card'>
+        <% if article.image.attached? %>
+        <%=image_tag article.image.variant(resize_to_limit: [300, 300]) %>
+      </div>
+    </div>
+    <div class='col-3'>
+      <div class='card-body'>
+        <h5 class='card-title'><%= article.title %></h5>
+        <p class='card-text'>
+          <%= article.text %>
+        </p>
+        <%= show_vote_btn(article)%>
+        <h6 class="card-text mt-2"><%=article.author.name %> </h6>
+      </div>
+    </div>
     <% end%>
-  </p>
-  <caption class="pt-2"><%#=article.author.name %> </caption>
+  </div>
   <article>
     <% end %>
