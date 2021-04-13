@@ -18,7 +18,9 @@
       <div class="container-fluid">
         <%= link_to "Yatching Lifestyle", root_path, class: 'navbar-brand' %>
         <div class="">
-          <a href="articles/new" class="px-1">Home</a>
+          <%if logged_in? %>
+          <%= link_to "Home", new_article_path, class: 'px-1' %>
+          <% end %>
           <a href="#" class="px-1">Sport</a>
           <a href="#" class="px-1">Entertainment</a>
           <a href="#" class="px-1">Magazine</a>

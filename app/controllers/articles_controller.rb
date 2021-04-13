@@ -1,13 +1,13 @@
 class ArticlesController < ApplicationController
   before_action :logged_in?
+  # before_action :set_article, only: %i[show edit update destroy]
   def index
-    @articles = Article.all
+    @articles = Article.all.ordered_by_most_recent
   end
 
   def new
     @article = current_user.articles.build
     @category_options = Category.all.map{ |c| [c.name, c.id] }
-    @priority_options = Category.all.map{ |c| [c.priority, c.id] }
   end
 
   def create
@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(:params[:id])
+    @article = Article.find(params[:id])
   end
 
   private
@@ -34,4 +34,7 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :text, :image)
   end
+
+  # def set_article    
+  # end
 end
