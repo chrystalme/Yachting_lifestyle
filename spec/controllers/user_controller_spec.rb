@@ -4,30 +4,40 @@ describe 'the signin process', type: :feature do
   end
 
   it 'signs me in' do
-    visit sign_up_path
-    fill_in 'Name', with: 'user'
+    visit log_in_path
+    fill_in 'name', with: 'user'
     
 
-    click_button 'Log in'
+    click_button 'Log In'
     expect(page).to_not have_content 'Signed in successfully.'
   end
 
   it 'signs me in' do
-    visit sign_up_path
-    fill_in 'Name', with: 'Mary'
+    visit log_in_path
+    fill_in 'name', with: 'Mary'
     
 
-    click_button 'Log in'
+    click_button 'Log In'
     expect(page).to have_content 'Logged in successfully.'
   end
 
-  xit 'signs me out' do
-    visit destroy_user_session_path
-    expect(page).to have_content 'You need to sign in or sign up before continuing.'
+  it 'signs me up' do
+    visit sign_up_path
+    fill_in 'user[name]', with: 'User'
+    
+
+    click_button 'Sign Up'
+    expect(page).to have_content 'User has been created successfully.'
   end
 
-  xit 'signs me out' do
-    visit new_user_session_path
-    expect(page).to_not have_content 'You need to sign in or sign up before continuing.'
+  it 'signs me up' do
+    visit sign_up_path
+    fill_in 'user[name]', with: 'User'
+    
+
+    click_button 'Sign Up'
+    expect(page).to_not have_content 'Alex has been created successfully.'
   end
+
+  
 end
