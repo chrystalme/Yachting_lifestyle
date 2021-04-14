@@ -12,13 +12,16 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(article_params)
-
     if @article.save
       flash[:notice] = "#{@article.title} has been created successfully."
       redirect_to root_path
     else
       render :new
     end
+  end
+
+  def category
+    @category = Article.all.where(Article.find(params[:id]).categories.pluck(:name))
   end
 
   def show
@@ -32,7 +35,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text, :image)
+    params.require(:article).permit(:title, :text, :image, :category_id)
   end
 
   # def set_article    

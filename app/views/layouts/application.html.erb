@@ -19,7 +19,7 @@
         <%= link_to "Yatching Lifestyle", root_path, class: 'navbar-brand' %>
         <div class="">
           <%if logged_in? %>
-          <%= link_to "Home", new_article_path, class: 'px-1' %>
+          <%= link_to "Home", articles_path, class: 'px-1' %>
           <% end %>
           <a href="#" class="px-1">Sport</a>
           <a href="#" class="px-1">Entertainment</a>

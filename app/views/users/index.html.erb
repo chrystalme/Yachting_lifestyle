@@ -1,30 +1,26 @@
 <section class='row g-0'>
-  <div class=' featured col-12 d-flex justify-content-center'>
+  <div class='featured col-12 d-flex justify-content-center'>
     <% featured_article = Article.find(Vote.group(:article_id).count.max_by{|k,v| v}[0])%>
     <% if featured_article.image.attached? %>
     <%=image_tag(featured_article.image.variant(resize_to_limit: [1000,600])) %>
-    <h6><strong><%= featured_article.title%></strong></h6>
-    <p><%= featured_article.text.truncate_words(7)%></p>
+    <h6><strong><%=link_to(featured_article.title, article_path(featured_article))%></strong></h6>
+    <p><%= featured_article.text.truncate_words(30)%></p>
     <% end %>
   </div>
-  <article class='bg-white'>
-    <% Article.all.each do |article| %>
+  <article class='d-flex bg-white'>
+    <% Article.where.not('id = ?', Vote.group(:article_id).count.max_by{|k,v| v}[0]).limit(5).each do |article| %>
     <% if article.image.attached? %>
     <div class='col-3'>
-      <div>
-        <%= link_to "#{image_tag(article.image.variant(resize_to_limit: [300, 300]))}".html_safe  , article_path(article) %>
-      </div>
-      <div>
-        <div class='card-body'>
-          <h5 class='card-title'><%= article.categories.pluck(:name)[0] %></h5>
-          <p class='card-text'>
-            <%= article.text.truncate_words(7) %>
-          </p>
-          <%= show_vote_btn(article)%><em class="badge bg-primary mx-3"><%= article.votes.count.to_s + ' Vote(s)' %></em>
-          <h6 class="card-text mt-2"><strong>Author: </strong><%=article.author.name %> </h6>
-        </div>
+      <div class='other-article'>
+        <%= link_to "#{image_tag(article.image.variant(resize_to_limit: [297, 300]))}".html_safe  , article_path(article) %>
+        <!--<p class=''>
+
+          <%= article.text.truncate_words(5) %>
+        </p> -->
+        <h5 class=''><%= article.categories.pluck(:name)[0] %></h5>
       </div>
     </div>
+    <!--
     <div class='col-3'>
       <div>
         <%= link_to "#{image_tag(article.image.variant(resize_to_limit: [300, 300]))}".html_safe  , article_path(article) %>
@@ -55,6 +51,7 @@
         </div>
       </div>
     </div>
+    -->
     <% end%>
     <% end %>
   </article>

@@ -1,6 +1,6 @@
 <article>
   <div class='card'>
-    <% Article.all.each do |article| %>
+    <% @articles.each do |article| %>
     <div class="row g-0">
       <div class='col-3'>
         <% if article.image.attached? %>
