@@ -27,6 +27,7 @@ nav {
     font-size: small;
   }
 }
+
 article {
   background-color: $indigo-100;
 }
@@ -39,4 +40,54 @@ footer {
   .item {
     font-size: xx-small;
   }
+}
+
+.featured {
+  border-top: 0.2rem solid teal;
+  position: relative;
+  img {
+    width: 100%;
+    height: 50%;
+  }
+  h6 {
+    position: absolute;
+    bottom: 3rem;
+    left: 0.5rem;
+    color: white;
+  }
+  p {
+    position: absolute;
+    bottom: 1.2rem;
+    left: 0.5rem;
+    color: white;
+  }
+}
+nav::after {
+  content: "";
+  position: absolute;
+  height: 0.2rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff3333+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+100,2a8ad8+100,2a8ad8+100,207bca+100,2a8ad8+100,2a8ad8+100,2a8ad8+100,2a8ad8+100,207bca+100,207bca+100,207bca+100,7ebae8+100,2a8ad8+100 */
+  background: #ff3333; /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    #ff3333 20%,
+    #2a8ad8 20%,
+    #2a8ad8 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    #ff3333 20%,
+    #2a8ad8 20%,
+    #2a8ad8 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff3333 20%,
+    #2a8ad8 20%,
+    #2a8ad8 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3333', endColorstr='#2a8ad8',GradientType=1 ); /* IE6-9 */
 }

@@ -10,4 +10,8 @@ class Article < ApplicationRecord
   validates :title, presence: true, length: { maximum: 50 }
   validates :text, presence: true
   validates :image, presence: true
+
+  def featured
+    Article.find(Vote.group(:article_id).count.max_by{|k,v| v}[0])
+  end
 end
