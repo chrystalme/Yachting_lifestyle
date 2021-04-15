@@ -12,9 +12,9 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(article_params)
-    # @category_options = Category.all.map{ |c| [c.name, c.id] }
-    @article.categories << @category_options
+    @category_options = Category.all.map{ |c| [c.name, c.id] }
     if @article.save
+      # ArticleCategory.create!(article_id: @article.id, category_id: params[:category_id])
       flash[:notice] = "#{@article.title} has been created successfully."
       redirect_to root_path
     else
