@@ -32,6 +32,16 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  def update
+    @article = current_user.articles.build(article_params)
+    if @article.update
+      flash[:notice] = "#{@article.title} has been updated successfully."
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
   private
 
   def article_params

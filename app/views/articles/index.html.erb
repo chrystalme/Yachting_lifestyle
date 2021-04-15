@@ -9,7 +9,7 @@
       <div class='col-3'>
         <div class='card-body'>
           <h5 class='card-title'><%= article.title %></h5>
-          <p class='card-text'>
+          <p class='card-text text-white'>
             <%= article.text.truncate_words(7) %>
           </p>
           <%= show_vote_btn(article)%><em class="badge bg-primary mx-3"><%= article.votes.count.to_s + ' Vote(s)' %></em>
@@ -22,4 +22,4 @@
   </div>
   </div>
   <article>
-    <%= button_to "Edit", article_path(@articles) %>
+    <%#= link_to "Edit", @article %>

@@ -1,7 +1,9 @@
 <%#= button_to "Edit", article_path(@article) %>
-<div class='container text-white'>
+<div class='container text-secondary'>
   <div class='row'>
     <div class='col-7'>
+      <% @article = Article.category(Category.where('id = ?', params[:id]).pluck(:name)[0])%>
+      <% @article.each do |art_cat|>
       <%= image_tag(@article.image.variant(resize_to_limit: [500, 500]))%>
     </div>
     <div class='col-5'>
@@ -12,6 +14,7 @@
             <%= show_vote_btn(@article)%>
             <em class="badge bg-primary mx-3"><%= @article.votes.count.to_s + ' Vote(s)' %></em>
           </div>
+          <% end %>
     </div>
   </div>
 </div>
