@@ -12,16 +12,14 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(article_params)
+    # @category_options = Category.all.map{ |c| [c.name, c.id] }
+    @article.categories << @category_options
     if @article.save
       flash[:notice] = "#{@article.title} has been created successfully."
       redirect_to root_path
     else
       render :new
     end
-  end
-
-  def category
-    @category = Article.all.where(Article.find(params[:id]).categories.pluck(:name))
   end
 
   def show

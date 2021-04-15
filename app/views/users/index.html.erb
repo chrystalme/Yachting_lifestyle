@@ -17,7 +17,7 @@
 
           <%= article.text.truncate_words(5) %>
         </p> -->
-        <h5 class=''><%= article.categories.pluck(:name)[0] %></h5>
+        <h5 class=''><%=link_to(article.categories.pluck(:name)[0],category_path(article.categories.pluck(:id)[0]) ) %></h5>
       </div>
     </div>
 
