@@ -6,7 +6,15 @@
 
 ![screenshot](./app/assets/images/Screenshot-3.png)
 
-## The application is created as a part requirement of the Microverse fullstack developer course. 
+![screenshot](./app/assets/images/Screenshot-4.png)
+
+![screenshot](./app/assets/images/Screenshot-5.png)
+
+![screenshot](./app/assets/images/Screenshot-6.png)
+
+![screenshot](./app/assets/images/Screenshot-7.png)
+
+## The application is created as a part requirement of the Microverse fullstack developer course.
 
 #### It is my rails capstone project. Yachting Lifestyle is a sort of magazine for those who are interested in Yachts. Here you can read stories about different categories of the Yachting Lifestyle.
 
@@ -39,11 +47,11 @@ Set up project using the above specifications
 
 #### For HTTPS
 
-- use ` https://github.com/ahmetbozaci/ror-social-scaffold.git` to clone the repository
+- use `https://github.com/chrystalme/Yatching_lifestyle.git` to clone the repository
 
 #### For SSH
 
-- use `git@github.com:ahmetbozaci/ror-social-scaffold.git` to clone the repository
+- use `git@github.com:chrystalme/Yatching_lifestyle.git` to clone the repository
 - Change to the parent directory of the project using
   `cd private-events`
 - run `bundle install ` to install dependencies
@@ -60,12 +68,11 @@ Set up project using the above specifications
 - Twitter: [@afam_ifeanyi](https://twitter.com/afam_ifeanyi)
 - LinkedIn: [Malieze Afam Ifeanyi(chrys)](https://linkedin.com/afam-chrys)
 
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/ahmetbozaci/ror-social-scaffold/issues).
+Feel free to check the [issues page](https://github.com/chrystalme/Yatching_lifestyle/issues).
 
 ## Show your support
 
@@ -73,7 +80,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- [Odin Projects](https://www.theodinproject.com/courses/ruby-on-rails/)
+- [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
 - [Microverse](https://microverse.com)
 
 ## 📝 License

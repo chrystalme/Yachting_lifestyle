@@ -22,6 +22,15 @@ body {
   padding: 5px;
 }
 
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+
+  &:hover {
+    color: rgb(255, 99, 71);
+  }
+}
+
 nav {
   background-color: $gray-100;
   text-transform: uppercase;
@@ -30,15 +39,6 @@ nav {
     color: rgb(128, 128, 128);
     font-size: small;
     text-decoration: none;
-  }
-}
-
-a {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-
-  &:hover {
-    color: rgb(255, 99, 71);
   }
 }
 
