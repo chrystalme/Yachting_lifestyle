@@ -1,7 +1,7 @@
-<div class='row m-auto py-5'>
+<div class='row m-auto py-2'>
   <div class='col-3'></div>
   <div class='col-6'>
-    <h2> Create Article <h2>
+    <h2 class='text-center text-white'> Create Article <h2>
         <%= form_with model: @article, url: articles_path do |f| %>
         <%= show_errors(@article) %>
         <div class='input-group'>
@@ -14,9 +14,9 @@
           <span class='input-group-text'>
             <i class="far fa-newspaper"></i>
           </span>
-          <%= f.text_area :text, placeholder: 'Article title', class: 'form-control' %>
+          <%= f.text_area :text, placeholder: 'Article title',rows: 8, class: 'form-control' %>
         </div>
-        <%#= select_tag(:article_id, options_for_select(@category_options), multiple class: 'form-select')  %>
+        <%= select_tag(:category_id, options_for_select(@category_options), class: 'mt-2 form-select')  %>
         <div class='input-group mt-2'>
           <span class='input-group-text'>
             <i class="fas fa-camera"></i>

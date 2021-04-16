@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   post 'log_in', to: 'sessions#create'
 
   delete 'log_out', to: 'sessions#destroy'
-  resources :articles do #, except: %i[destroy update edit]
-    member do
-      get 'vote'
-    end 
+  resources :articles do
+     resources :votes, only: %i[create destroy]
   end
+  resources :categories, only: %i[index show]
+
 end
