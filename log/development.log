@@ -324,3 +324,615 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.0ms | Allocations: 5013)
 
 
+Started GET "/articles" for ::1 at 2021-04-16 18:42:19 +0300
+  [1m[35m (46.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (15.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."created_at" DESC[0m
+  ↳ app/helpers/articles_helper.rb:4:in `show_articles'
+  [1m[36mActiveStorage::Attachment Load (2.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 24], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:7:in `block in show_articles'
+  [1m[36mActiveStorage::Blob Load (3.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 80], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:8:in `block in show_articles'
+  [1m[36mVote Load (2.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 24]]
+  ↳ app/helpers/articles_helper.rb:16:in `block in show_articles'
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:17:in `block in show_articles'
+  [1m[36mActiveStorage::Attachment Load (2.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 23], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:7:in `block in show_articles'
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:8:in `block in show_articles'
+  [1m[36mVote Load (2.0ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 23], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 23]]
+  ↳ app/helpers/articles_helper.rb:16:in `block in show_articles'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:17:in `block in show_articles'
+  [1m[36mActiveStorage::Attachment Load (3.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 22], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:7:in `block in show_articles'
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:8:in `block in show_articles'
+  [1m[36mVote Load (13.5ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 22], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 22]]
+  ↳ app/helpers/articles_helper.rb:16:in `block in show_articles'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:17:in `block in show_articles'
+  [1m[36mActiveStorage::Attachment Load (2.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:7:in `block in show_articles'
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:8:in `block in show_articles'
+  [1m[36mVote Load (1.6ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 21], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 21]]
+  ↳ app/helpers/articles_helper.rb:16:in `block in show_articles'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:17:in `block in show_articles'
+  [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:7:in `block in show_articles'
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:8:in `block in show_articles'
+  [1m[36mVote Load (1.6ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 20], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 20]]
+  ↳ app/helpers/articles_helper.rb:16:in `block in show_articles'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:17:in `block in show_articles'
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:7:in `block in show_articles'
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:8:in `block in show_articles'
+  [1m[36mVote Load (1.9ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 19], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 19]]
+  ↳ app/helpers/articles_helper.rb:16:in `block in show_articles'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:17:in `block in show_articles'
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:7:in `block in show_articles'
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:8:in `block in show_articles'
+  [1m[36mVote Load (1.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 18], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 18]]
+  ↳ app/helpers/articles_helper.rb:16:in `block in show_articles'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:17:in `block in show_articles'
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:7:in `block in show_articles'
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:8:in `block in show_articles'
+  [1m[36mVote Load (1.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 17], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 17]]
+  ↳ app/helpers/articles_helper.rb:16:in `block in show_articles'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:17:in `block in show_articles'
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:7:in `block in show_articles'
+  [1m[36mActiveStorage::Blob Load (2.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:8:in `block in show_articles'
+  [1m[36mVote Load (1.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 16], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 16]]
+  ↳ app/helpers/articles_helper.rb:16:in `block in show_articles'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:17:in `block in show_articles'
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:7:in `block in show_articles'
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:8:in `block in show_articles'
+  [1m[36mVote Load (1.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 15], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 15]]
+  ↳ app/helpers/articles_helper.rb:16:in `block in show_articles'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:17:in `block in show_articles'
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:7:in `block in show_articles'
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:7:in `block in show_articles'
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:8:in `block in show_articles'
+  [1m[36mVote Load (1.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 13], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 13]]
+  ↳ app/helpers/articles_helper.rb:16:in `block in show_articles'
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:17:in `block in show_articles'
+  [1m[36mActiveStorage::Attachment Load (2.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:7:in `block in show_articles'
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:8:in `block in show_articles'
+  [1m[36mVote Load (1.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 12]]
+  ↳ app/helpers/articles_helper.rb:16:in `block in show_articles'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/articles_helper.rb:17:in `block in show_articles'
+  Rendered articles/index.html.erb within layouts/application (Duration: 559.9ms | Allocations: 88161)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/chrys/Desktop/ruby_on_rails/lifestyle/public/packs
+[Webpacker] Hash: e332c6419728fac579d5
+Version: webpack 4.46.0
+Time: 1694ms
+Built at: 16/04/2021 18:42:28
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-f826770d917d8a37c1d8.js    125 KiB  application  [emitted] [immutable]  application
+js/application-f826770d917d8a37c1d8.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-f826770d917d8a37c1d8.js js/application-f826770d917d8a37c1d8.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" LIMIT $1[0m  [["LIMIT", 4]]
+  ↳ app/views/layouts/application.html.erb:24
+  Rendered layout layouts/application.html.erb (Duration: 8735.9ms | Allocations: 181693)
+Completed 200 OK in 8830ms (Views: 8562.1ms | ActiveRecord: 194.8ms | Allocations: 193987)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBWUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--923e1a94bb825640dc5411b6ef4ee9b8a5f060bf/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--7797393e1c6daa8e14f69fbaa48372834200cea8/pexels-szelei-robert-1482193.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBUZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--634ee83ed57f7de69d11bebafaae6ee3e64fb424/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--7797393e1c6daa8e14f69fbaa48372834200cea8/pexels-robert-stokoe-714666.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBWUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--923e1a94bb825640dc5411b6ef4ee9b8a5f060bf", "variation_key"=>"[FILTERED]", "filename"=>"pexels-szelei-robert-1482193"}
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBUZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--634ee83ed57f7de69d11bebafaae6ee3e64fb424", "variation_key"=>"[FILTERED]", "filename"=>"pexels-robert-stokoe-714666"}
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 80], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (2.5ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 80], ["variation_digest", "LtoSAYL4ZrQTjS8XJDwiSZvW12s="], ["LIMIT", 1]]
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBUUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3c79794499963f7b04cc1a99261b2a4f401fd24e/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--7797393e1c6daa8e14f69fbaa48372834200cea8/pexels-robert-stokoe-714666.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+  [1m[36mActiveStorage::Attachment Load (10.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 68], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBTdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--29c22ef296ba00780260f8966be47c4e4869f92f/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--7797393e1c6daa8e14f69fbaa48372834200cea8/pexels-calebe-miranda-793166.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBTUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e4e21728d0eacc9850e6d871d09c15448e9cc083/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--7797393e1c6daa8e14f69fbaa48372834200cea8/pexels-pixabay-144249.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+  [1m[36mActiveStorage::Blob Load (10.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 82], ["LIMIT", 1]]
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBTUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e4e21728d0eacc9850e6d871d09c15448e9cc083", "variation_key"=>"[FILTERED]", "filename"=>"pexels-pixabay-144249"}
+  [1m[36mActiveStorage::Blob Load (3.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBTdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--29c22ef296ba00780260f8966be47c4e4869f92f", "variation_key"=>"[FILTERED]", "filename"=>"pexels-calebe-miranda-793166"}
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBUUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3c79794499963f7b04cc1a99261b2a4f401fd24e", "variation_key"=>"[FILTERED]", "filename"=>"pexels-robert-stokoe-714666"}
+[36m  Disk Storage (37.1ms) [0m[34mGenerated URL for file at key: hbaalzm0v23q9mwb7sg0l24d5qt1 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhR0poWVd4NmJUQjJNak54T1cxM1lqZHpaekJzTWpSa05YRjBNUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF6ZW1Wc1pXa3RjbTlpWlhKMExURTBPREl4T1RNdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRjM3BsYkdWcExYSnZZbVZ5ZEMweE5EZ3lNVGt6TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4LjY4N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--908f48584d4e91c5528ee2492cd05892c2925eb3/pexels-szelei-robert-1482193.jpg)[0m
+  [1m[36mActiveStorage::VariantRecord Load (11.7ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 73], ["variation_digest", "LtoSAYL4ZrQTjS8XJDwiSZvW12s="], ["LIMIT", 1]]
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhR0poWVd4NmJUQjJNak54T1cxM1lqZHpaekJzTWpSa05YRjBNUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF6ZW1Wc1pXa3RjbTlpWlhKMExURTBPREl4T1RNdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRjM3BsYkdWcExYSnZZbVZ5ZEMweE5EZ3lNVGt6TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4LjY4N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--908f48584d4e91c5528ee2492cd05892c2925eb3/pexels-szelei-robert-1482193.jpg
+Completed 302 Found in 153ms (ActiveRecord: 37.0ms | Allocations: 24855)
+
+
+  [1m[36mActiveStorage::Attachment Load (5.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 64], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (3.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: lgtbrh4atxtdqrb34buwtqumd6nl (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiR2QwWW5Kb05HRjBlSFJrY1hKaU16UmlkWGQwY1hWdFpEWnViQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF5YjJKbGNuUXRjM1J2YTI5bExUY3hORFkyTmk1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXliMkpsY25RdGMzUnZhMjlsTFRjeE5EWTJOaTVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4LjcxM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--51f2eb3597b6b7c3a789b8cef87fc980b541fb1b/pexels-robert-stokoe-714666.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiR2QwWW5Kb05HRjBlSFJrY1hKaU16UmlkWGQwY1hWdFpEWnViQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF5YjJKbGNuUXRjM1J2YTI5bExUY3hORFkyTmk1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXliMkpsY25RdGMzUnZhMjlsTFRjeE5EWTJOaTVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4LjcxM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--51f2eb3597b6b7c3a789b8cef87fc980b541fb1b/pexels-robert-stokoe-714666.jpg
+Completed 302 Found in 173ms (ActiveRecord: 79.1ms | Allocations: 28332)
+
+
+  [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhR0poWVd4NmJUQjJNak54T1cxM1lqZHpaekJzTWpSa05YRjBNUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF6ZW1Wc1pXa3RjbTlpWlhKMExURTBPREl4T1RNdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRjM3BsYkdWcExYSnZZbVZ5ZEMweE5EZ3lNVGt6TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4LjY4N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--908f48584d4e91c5528ee2492cd05892c2925eb3/pexels-szelei-robert-1482193.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiR2QwWW5Kb05HRjBlSFJrY1hKaU16UmlkWGQwY1hWdFpEWnViQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF5YjJKbGNuUXRjM1J2YTI5bExUY3hORFkyTmk1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXliMkpsY25RdGMzUnZhMjlsTFRjeE5EWTJOaTVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4LjcxM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--51f2eb3597b6b7c3a789b8cef87fc980b541fb1b/pexels-robert-stokoe-714666.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+  [1m[36mActiveStorage::Blob Load (8.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (6.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (15.6ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 68], ["variation_digest", "LtoSAYL4ZrQTjS8XJDwiSZvW12s="], ["LIMIT", 1]]
+Processing by ActiveStorage::DiskController#show as JPEG
+  [1m[36mActiveStorage::Attachment Load (5.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 59], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+Processing by ActiveStorage::DiskController#show as JPEG
+  [1m[36mActiveStorage::VariantRecord Load (15.6ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 72], ["variation_digest", "LtoSAYL4ZrQTjS8XJDwiSZvW12s="], ["LIMIT", 1]]
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-szelei-robert-1482193"}
+  [1m[36mActiveStorage::Blob Load (7.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-robert-stokoe-714666"}
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: ejgs0n8ew8ymiwswa0qaplhhprgs (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaV3BuY3pCdU9HVjNPSGx0YVhkemQyRXdjV0Z3Ykdob2NISm5jd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF3YVhoaFltRjVMVEUwTkRJME9TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjNCbGVHVnNjeTF3YVhoaFltRjVMVEUwTkRJME9TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjEtMDQtMTZUMTU6NDc6MjguODEyWiIsInB1ciI6ImJsb2Jfa2V5In19--6384ab91bcedf496d14be25d48c6ce1a1719856d/pexels-pixabay-144249.jpg)[0m
+  [1m[36mActiveStorage::VariantRecord Load (10.6ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 70], ["variation_digest", "LtoSAYL4ZrQTjS8XJDwiSZvW12s="], ["LIMIT", 1]]
+Completed 200 OK in 8ms (ActiveRecord: 0.0ms | Allocations: 1761)
+
+
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaV3BuY3pCdU9HVjNPSGx0YVhkemQyRXdjV0Z3Ykdob2NISm5jd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF3YVhoaFltRjVMVEUwTkRJME9TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjNCbGVHVnNjeTF3YVhoaFltRjVMVEUwTkRJME9TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjEtMDQtMTZUMTU6NDc6MjguODEyWiIsInB1ciI6ImJsb2Jfa2V5In19--6384ab91bcedf496d14be25d48c6ce1a1719856d/pexels-pixabay-144249.jpg
+Completed 200 OK in 7ms (ActiveRecord: 0.0ms | Allocations: 1424)
+
+
+Completed 302 Found in 162ms (ActiveRecord: 76.3ms | Allocations: 31948)
+
+
+  [1m[36mActiveStorage::Attachment Load (10.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 65], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (8.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 60], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (3.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: 966ak29muo0g9tnvpfwuisfwof3y (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPVFkyWVdzeU9XMTFiekJuT1hSdWRuQm1kM1ZwYzJaM2IyWXplUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF5YjJKbGNuUXRjM1J2YTI5bExUY3hORFkyTmk1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXliMkpsY25RdGMzUnZhMjlsTFRjeE5EWTJOaTVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljg0MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e05d87d0f16af758cce2f49c3f5daf175951fbb7/pexels-robert-stokoe-714666.jpg)[0m
+  [1m[36mActiveStorage::Blob Load (5.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: i0a4vol0ckx1zbqai62jiklx8424 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVEJoTkhadmJEQmphM2d4ZW1KeFlXazJNbXBwYTJ4NE9EUXlOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFqWVd4bFltVXRiV2x5WVc1a1lTMDNPVE14TmpZdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRZMkZzWldKbExXMXBjbUZ1WkdFdE56a3pNVFkyTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljg0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--866217eb5feedf2e325c0fd46f0dac5fb1eeb8f1/pexels-calebe-miranda-793166.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVEJoTkhadmJEQmphM2d4ZW1KeFlXazJNbXBwYTJ4NE9EUXlOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFqWVd4bFltVXRiV2x5WVc1a1lTMDNPVE14TmpZdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRZMkZzWldKbExXMXBjbUZ1WkdFdE56a3pNVFkyTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljg0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--866217eb5feedf2e325c0fd46f0dac5fb1eeb8f1/pexels-calebe-miranda-793166.jpg
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBQUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5317cbb4695c669b32fe79bb45a8e7fa4cdc06f7/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--7797393e1c6daa8e14f69fbaa48372834200cea8/pexels-mohamed-hassan-776030.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPVFkyWVdzeU9XMTFiekJuT1hSdWRuQm1kM1ZwYzJaM2IyWXplUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF5YjJKbGNuUXRjM1J2YTI5bExUY3hORFkyTmk1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXliMkpsY25RdGMzUnZhMjlsTFRjeE5EWTJOaTVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljg0MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e05d87d0f16af758cce2f49c3f5daf175951fbb7/pexels-robert-stokoe-714666.jpg
+Completed 302 Found in 175ms (ActiveRecord: 83.1ms | Allocations: 35126)
+
+
+Completed 302 Found in 175ms (ActiveRecord: 79.2ms | Allocations: 35387)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaV3BuY3pCdU9HVjNPSGx0YVhkemQyRXdjV0Z3Ykdob2NISm5jd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF3YVhoaFltRjVMVEUwTkRJME9TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjNCbGVHVnNjeTF3YVhoaFltRjVMVEUwTkRJME9TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjEtMDQtMTZUMTU6NDc6MjguODEyWiIsInB1ciI6ImJsb2Jfa2V5In19--6384ab91bcedf496d14be25d48c6ce1a1719856d/pexels-pixabay-144249.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBQUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5317cbb4695c669b32fe79bb45a8e7fa4cdc06f7", "variation_key"=>"[FILTERED]", "filename"=>"pexels-mohamed-hassan-776030"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-pixabay-144249"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 293)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8ace5eceeef76f48898da5074e6cec0d76df39dd/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--7797393e1c6daa8e14f69fbaa48372834200cea8/pexels-mohamed-hassan-776030.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+  [1m[36mActiveStorage::Blob Load (13.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPVFkyWVdzeU9XMTFiekJuT1hSdWRuQm1kM1ZwYzJaM2IyWXplUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF5YjJKbGNuUXRjM1J2YTI5bExUY3hORFkyTmk1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXliMkpsY25RdGMzUnZhMjlsTFRjeE5EWTJOaTVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljg0MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e05d87d0f16af758cce2f49c3f5daf175951fbb7/pexels-robert-stokoe-714666.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVEJoTkhadmJEQmphM2d4ZW1KeFlXazJNbXBwYTJ4NE9EUXlOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFqWVd4bFltVXRiV2x5WVc1a1lTMDNPVE14TmpZdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRZMkZzWldKbExXMXBjbUZ1WkdFdE56a3pNVFkyTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljg0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--866217eb5feedf2e325c0fd46f0dac5fb1eeb8f1/pexels-calebe-miranda-793166.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+  [1m[36mActiveStorage::VariantRecord Load (6.3ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 56], ["variation_digest", "LtoSAYL4ZrQTjS8XJDwiSZvW12s="], ["LIMIT", 1]]
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8ace5eceeef76f48898da5074e6cec0d76df39dd", "variation_key"=>"[FILTERED]", "filename"=>"pexels-mohamed-hassan-776030"}
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as JPEG
+  [1m[36mActiveStorage::Blob Load (4.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-robert-stokoe-714666"}
+  [1m[36mActiveStorage::Attachment Load (7.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 49], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-calebe-miranda-793166"}
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1988bff67547ea57c0d5ddb54b4ae2c68e00061b/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--7797393e1c6daa8e14f69fbaa48372834200cea8/pexels-cristina-s%CC%A7opanda%CC%86-756237.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+Completed 200 OK in 5ms (ActiveRecord: 0.0ms | Allocations: 1201)
+
+
+Completed 200 OK in 5ms (ActiveRecord: 0.0ms | Allocations: 756)
+
+
+  [1m[36mActiveStorage::VariantRecord Load (7.9ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 37], ["variation_digest", "LtoSAYL4ZrQTjS8XJDwiSZvW12s="], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (4.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: lmnro6zwhxkompgedusqsemhmqtq (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiRzF1Y204MmVuZG9lR3R2YlhCblpXUjFjM0Z6Wlcxb2JYRjBjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF0YjJoaGJXVmtMV2hoYzNOaGJpMDNOell3TXpBdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiVzlvWVcxbFpDMW9ZWE56WVc0dE56YzJNRE13TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljk0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--5629e36d755e67691d868ab6ec51c6d494d18f40/pexels-mohamed-hassan-776030.jpg)[0m
+  [1m[36mActiveStorage::Attachment Load (4.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 31], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiRzF1Y204MmVuZG9lR3R2YlhCblpXUjFjM0Z6Wlcxb2JYRjBjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF0YjJoaGJXVmtMV2hoYzNOaGJpMDNOell3TXpBdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiVzlvWVcxbFpDMW9ZWE56WVc0dE56YzJNRE13TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljk0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--5629e36d755e67691d868ab6ec51c6d494d18f40/pexels-mohamed-hassan-776030.jpg
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1988bff67547ea57c0d5ddb54b4ae2c68e00061b", "variation_key"=>"[FILTERED]", "filename"=>"pexels-cristina-şopandă-756237"}
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: 4e3w1vpbptcv1ahv7ieuj90uomfb (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOR1V6ZHpGMmNHSndkR04yTVdGb2RqZHBaWFZxT1RCMWIyMW1ZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF0YjJoaGJXVmtMV2hoYzNOaGJpMDNOell3TXpBdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiVzlvWVcxbFpDMW9ZWE56WVc0dE56YzJNRE13TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljk1M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3a0a2985def36270f1e12109e9e925199908aca5/pexels-mohamed-hassan-776030.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOR1V6ZHpGMmNHSndkR04yTVdGb2RqZHBaWFZxT1RCMWIyMW1ZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF0YjJoaGJXVmtMV2hoYzNOaGJpMDNOell3TXpBdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiVzlvWVcxbFpDMW9ZWE56WVc0dE56YzJNRE13TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljk1M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3a0a2985def36270f1e12109e9e925199908aca5/pexels-mohamed-hassan-776030.jpg
+Completed 302 Found in 50ms (ActiveRecord: 17.7ms | Allocations: 11124)
+
+
+Completed 302 Found in 87ms (ActiveRecord: 31.8ms | Allocations: 17229)
+
+
+  [1m[36mActiveStorage::Blob Load (3.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a6a4c26e741699e1bdd92fb5539a1e467433b3ba/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--7797393e1c6daa8e14f69fbaa48372834200cea8/pexels-julius-silver-753331.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+  [1m[36mActiveStorage::VariantRecord Load (4.0ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 10], ["variation_digest", "LtoSAYL4ZrQTjS8XJDwiSZvW12s="], ["LIMIT", 1]]
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ce62942c600c3da0b1e96cc2309f1d41e46b2f0c/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--7797393e1c6daa8e14f69fbaa48372834200cea8/pexels-cristina-s%CC%A7opanda%CC%86-756237.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a6a4c26e741699e1bdd92fb5539a1e467433b3ba", "variation_key"=>"[FILTERED]", "filename"=>"pexels-julius-silver-753331"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOR1V6ZHpGMmNHSndkR04yTVdGb2RqZHBaWFZxT1RCMWIyMW1ZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF0YjJoaGJXVmtMV2hoYzNOaGJpMDNOell3TXpBdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiVzlvWVcxbFpDMW9ZWE56WVc0dE56YzJNRE13TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljk1M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3a0a2985def36270f1e12109e9e925199908aca5/pexels-mohamed-hassan-776030.jpg" for ::1 at 2021-04-16 18:42:28 +0300
+  [1m[36mActiveStorage::Blob Load (7.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: smln05c77l129z5y382ovecrqe0q (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjMjFzYmpBMVl6YzNiREV5T1hvMWVUTTRNbTkyWldOeWNXVXdjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKd1pYaGxiSE10WTNKcGMzUnBibUV0Y3lVelJtOXdZVzVrWVNVelJpMDNOVFl5TXpjdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRZM0pwYzNScGJtRXRjeVZEUXlWQk4yOXdZVzVrWVNWRFF5VTROaTAzTlRZeU16Y3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTZUMTU6NDc6MjguOTk4WiIsInB1ciI6ImJsb2Jfa2V5In19--7b661140eaddc9ed903370bba5df1d54ee224d2c/pexels-cristina-s%CC%A7opanda%CC%86-756237.jpg)[0m
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+  [1m[36mActiveStorage::Blob Load (4.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjMjFzYmpBMVl6YzNiREV5T1hvMWVUTTRNbTkyWldOeWNXVXdjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKd1pYaGxiSE10WTNKcGMzUnBibUV0Y3lVelJtOXdZVzVrWVNVelJpMDNOVFl5TXpjdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRZM0pwYzNScGJtRXRjeVZEUXlWQk4yOXdZVzVrWVNWRFF5VTROaTAzTlRZeU16Y3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTZUMTU6NDc6MjguOTk4WiIsInB1ciI6ImJsb2Jfa2V5In19--7b661140eaddc9ed903370bba5df1d54ee224d2c/pexels-cristina-s%CC%A7opanda%CC%86-756237.jpg
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ce62942c600c3da0b1e96cc2309f1d41e46b2f0c", "variation_key"=>"[FILTERED]", "filename"=>"pexels-cristina-şopandă-756237"}
+Completed 302 Found in 53ms (ActiveRecord: 16.8ms | Allocations: 12832)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiRzF1Y204MmVuZG9lR3R2YlhCblpXUjFjM0Z6Wlcxb2JYRjBjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF0YjJoaGJXVmtMV2hoYzNOaGJpMDNOell3TXpBdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiVzlvWVcxbFpDMW9ZWE56WVc0dE56YzJNRE13TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljk0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--5629e36d755e67691d868ab6ec51c6d494d18f40/pexels-mohamed-hassan-776030.jpg" for ::1 at 2021-04-16 18:42:29 +0300
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-mohamed-hassan-776030"}
+  [1m[36mActiveStorage::VariantRecord Load (2.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 8], ["variation_digest", "LtoSAYL4ZrQTjS8XJDwiSZvW12s="], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (2.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ActiveStorage::DiskController#show as JPEG
+  [1m[36mActiveStorage::Attachment Load (4.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (6.7ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 6], ["variation_digest", "LtoSAYL4ZrQTjS8XJDwiSZvW12s="], ["LIMIT", 1]]
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-mohamed-hassan-776030"}
+Completed 200 OK in 10ms (ActiveRecord: 0.0ms | Allocations: 2926)
+
+
+  [1m[36mActiveStorage::Blob Load (5.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjMjFzYmpBMVl6YzNiREV5T1hvMWVUTTRNbTkyWldOeWNXVXdjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKd1pYaGxiSE10WTNKcGMzUnBibUV0Y3lVelJtOXdZVzVrWVNVelJpMDNOVFl5TXpjdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRZM0pwYzNScGJtRXRjeVZEUXlWQk4yOXdZVzVrWVNWRFF5VTROaTAzTlRZeU16Y3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTZUMTU6NDc6MjguOTk4WiIsInB1ciI6ImJsb2Jfa2V5In19--7b661140eaddc9ed903370bba5df1d54ee224d2c/pexels-cristina-s%CC%A7opanda%CC%86-756237.jpg" for ::1 at 2021-04-16 18:42:29 +0300
+  [1m[36mActiveStorage::Attachment Load (5.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+Completed 200 OK in 6ms (ActiveRecord: 0.0ms | Allocations: 1662)
+
+
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: 1jas9fei8n9zvk93q9fpphyk4kew (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNV3BoY3psbVpXazRiamw2ZG1zNU0zRTVabkJ3YUhsck5HdGxkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFxZFd4cGRYTXRjMmxzZG1WeUxUYzFNek16TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXFkV3hwZFhNdGMybHNkbVZ5TFRjMU16TXpNUzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI5LjA0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ef639cc4e10046600a28cc0ccd717745c1f7328d/pexels-julius-silver-753331.jpg)[0m
+  [1m[36mActiveStorage::Blob Load (3.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+Processing by ActiveStorage::DiskController#show as JPEG
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: oogbw9j9jx32jlhuxfotgsv7jgv8 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiMjluWW5jNWFqbHFlRE15YW14b2RYaG1iM1JuYzNZM2FtZDJPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKd1pYaGxiSE10WTNKcGMzUnBibUV0Y3lVelJtOXdZVzVrWVNVelJpMDNOVFl5TXpjdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRZM0pwYzNScGJtRXRjeVZEUXlWQk4yOXdZVzVrWVNWRFF5VTROaTAzTlRZeU16Y3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTZUMTU6NDc6MjkuMDUzWiIsInB1ciI6ImJsb2Jfa2V5In19--8bca90b9e20a211c6571cb84da8a8e53d75aef79/pexels-cristina-s%CC%A7opanda%CC%86-756237.jpg)[0m
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-cristina-şopandă-756237"}
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiMjluWW5jNWFqbHFlRE15YW14b2RYaG1iM1JuYzNZM2FtZDJPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKd1pYaGxiSE10WTNKcGMzUnBibUV0Y3lVelJtOXdZVzVrWVNVelJpMDNOVFl5TXpjdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRZM0pwYzNScGJtRXRjeVZEUXlWQk4yOXdZVzVrWVNWRFF5VTROaTAzTlRZeU16Y3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTZUMTU6NDc6MjkuMDUzWiIsInB1ciI6ImJsb2Jfa2V5In19--8bca90b9e20a211c6571cb84da8a8e53d75aef79/pexels-cristina-s%CC%A7opanda%CC%86-756237.jpg
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNV3BoY3psbVpXazRiamw2ZG1zNU0zRTVabkJ3YUhsck5HdGxkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFxZFd4cGRYTXRjMmxzZG1WeUxUYzFNek16TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXFkV3hwZFhNdGMybHNkbVZ5TFRjMU16TXpNUzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI5LjA0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ef639cc4e10046600a28cc0ccd717745c1f7328d/pexels-julius-silver-753331.jpg
+Completed 302 Found in 47ms (ActiveRecord: 18.9ms | Allocations: 12365)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c1c491da9557a4f9a5dbf6b0fca7e5db90860e33/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--7797393e1c6daa8e14f69fbaa48372834200cea8/pexels-lukas-296242.jpg" for ::1 at 2021-04-16 18:42:29 +0300
+Completed 302 Found in 67ms (ActiveRecord: 16.2ms | Allocations: 17105)
+
+
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 413)
+
+
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c1c491da9557a4f9a5dbf6b0fca7e5db90860e33", "variation_key"=>"[FILTERED]", "filename"=>"pexels-lukas-296242"}
+  [1m[36mActiveStorage::Blob Load (2.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (1.5ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 4], ["variation_digest", "LtoSAYL4ZrQTjS8XJDwiSZvW12s="], ["LIMIT", 1]]
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiMjluWW5jNWFqbHFlRE15YW14b2RYaG1iM1JuYzNZM2FtZDJPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKd1pYaGxiSE10WTNKcGMzUnBibUV0Y3lVelJtOXdZVzVrWVNVelJpMDNOVFl5TXpjdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRZM0pwYzNScGJtRXRjeVZEUXlWQk4yOXdZVzVrWVNWRFF5VTROaTAzTlRZeU16Y3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTZUMTU6NDc6MjkuMDUzWiIsInB1ciI6ImJsb2Jfa2V5In19--8bca90b9e20a211c6571cb84da8a8e53d75aef79/pexels-cristina-s%CC%A7opanda%CC%86-756237.jpg" for ::1 at 2021-04-16 18:42:29 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNV3BoY3psbVpXazRiamw2ZG1zNU0zRTVabkJ3YUhsck5HdGxkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFxZFd4cGRYTXRjMmxzZG1WeUxUYzFNek16TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXFkV3hwZFhNdGMybHNkbVZ5TFRjMU16TXpNUzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI5LjA0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ef639cc4e10046600a28cc0ccd717745c1f7328d/pexels-julius-silver-753331.jpg" for ::1 at 2021-04-16 18:42:29 +0300
+  [1m[36mActiveStorage::Attachment Load (5.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+Processing by ActiveStorage::DiskController#show as JPEG
+  [1m[36mActiveStorage::Blob Load (4.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: mhdel9wda1xypyr2dvj0usgr42me (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiV2hrWld3NWQyUmhNWGg1Y0hseU1tUjJhakIxYzJkeU5ESnRaUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpV1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFzZFd0aGN5MHlPVFl5TkRJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiSFZyWVhNdE1qazJNalF5TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI5LjEwMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1deb0dce7f21be87d6abbc81ec81160e4b1606f9/pexels-lukas-296242.jpg)[0m
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-cristina-şopandă-756237"}
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiV2hrWld3NWQyUmhNWGg1Y0hseU1tUjJhakIxYzJkeU5ESnRaUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpV1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFzZFd0aGN5MHlPVFl5TkRJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiSFZyWVhNdE1qazJNalF5TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI5LjEwMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1deb0dce7f21be87d6abbc81ec81160e4b1606f9/pexels-lukas-296242.jpg
+Processing by ActiveStorage::DiskController#show as JPEG
+Completed 302 Found in 36ms (ActiveRecord: 13.5ms | Allocations: 8687)
+
+
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 353)
+
+
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-julius-silver-753331"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 299)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiV2hrWld3NWQyUmhNWGg1Y0hseU1tUjJhakIxYzJkeU5ESnRaUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpV1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFzZFd0aGN5MHlPVFl5TkRJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiSFZyWVhNdE1qazJNalF5TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI5LjEwMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1deb0dce7f21be87d6abbc81ec81160e4b1606f9/pexels-lukas-296242.jpg" for ::1 at 2021-04-16 18:42:29 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-lukas-296242"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 295)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBSZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9f856e0df059fe763142a9e1343ee25a50a97a53/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--7797393e1c6daa8e14f69fbaa48372834200cea8/pexels-star-913111.jpg" for ::1 at 2021-04-16 18:42:29 +0300
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBSZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9f856e0df059fe763142a9e1343ee25a50a97a53", "variation_key"=>"[FILTERED]", "filename"=>"pexels-star-913111"}
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (1.2ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 65], ["variation_digest", "LtoSAYL4ZrQTjS8XJDwiSZvW12s="], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 58], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 67], ["LIMIT", 1]]
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: zcdlukdpvi3rsc2f31yvygm9fip5 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbU5rYkhWclpIQjJhVE55YzJNeVpqTXhlWFo1WjIwNVptbHdOUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF6ZEdGeUxUa3hNekV4TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXpkR0Z5TFRreE16RXhNUzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI5LjI5OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--f199234e556b29d1b46b6df56a29dafd0355e8f2/pexels-star-913111.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbU5rYkhWclpIQjJhVE55YzJNeVpqTXhlWFo1WjIwNVptbHdOUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF6ZEdGeUxUa3hNekV4TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXpkR0Z5TFRreE16RXhNUzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI5LjI5OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--f199234e556b29d1b46b6df56a29dafd0355e8f2/pexels-star-913111.jpg
+Completed 302 Found in 18ms (ActiveRecord: 4.5ms | Allocations: 5089)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbU5rYkhWclpIQjJhVE55YzJNeVpqTXhlWFo1WjIwNVptbHdOUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF6ZEdGeUxUa3hNekV4TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXpkR0Z5TFRreE16RXhNUzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI5LjI5OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--f199234e556b29d1b46b6df56a29dafd0355e8f2/pexels-star-913111.jpg" for ::1 at 2021-04-16 18:42:29 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-star-913111"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 295)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiV2hrWld3NWQyUmhNWGg1Y0hseU1tUjJhakIxYzJkeU5ESnRaUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpV1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFzZFd0aGN5MHlPVFl5TkRJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiSFZyWVhNdE1qazJNalF5TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI5LjEwMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1deb0dce7f21be87d6abbc81ec81160e4b1606f9/pexels-lukas-296242.jpg" for ::1 at 2021-04-16 18:42:51 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-lukas-296242"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 295)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiV2hrWld3NWQyUmhNWGg1Y0hseU1tUjJhakIxYzJkeU5ESnRaUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpV1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFzZFd0aGN5MHlPVFl5TkRJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiSFZyWVhNdE1qazJNalF5TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI5LjEwMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1deb0dce7f21be87d6abbc81ec81160e4b1606f9/pexels-lukas-296242.jpg" for ::1 at 2021-04-16 18:42:52 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-lukas-296242"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 295)
+
+
+Started GET "/articles/24" for ::1 at 2021-04-16 18:42:56 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mArticle Load (1.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:25:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 24], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:4
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 80], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:4
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:9
+  [1m[36mVote Load (2.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 24]]
+  ↳ app/views/articles/show.html.erb:12
+  Rendered articles/show.html.erb within layouts/application (Duration: 33.1ms | Allocations: 4763)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" LIMIT $1[0m  [["LIMIT", 4]]
+  ↳ app/views/layouts/application.html.erb:24
+  Rendered layout layouts/application.html.erb (Duration: 66.0ms | Allocations: 13218)
+Completed 200 OK in 79ms (Views: 55.5ms | ActiveRecord: 13.7ms | Allocations: 15302)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBWUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--923e1a94bb825640dc5411b6ef4ee9b8a5f060bf/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e3da9c03c91eeea1e05904b32e8c76e42506aa28/pexels-szelei-robert-1482193.jpg" for ::1 at 2021-04-16 18:42:56 +0300
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBWUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--923e1a94bb825640dc5411b6ef4ee9b8a5f060bf", "variation_key"=>"[FILTERED]", "filename"=>"pexels-szelei-robert-1482193"}
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 80], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (2.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 80], ["variation_digest", "o6FvqsFkA8vhEYgai/NTHqoEOlQ="], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (3.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 67], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhR0poWVd4NmJUQjJNak54T1cxM1lqZHpaekJzTWpSa05YRjBNUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF6ZW1Wc1pXa3RjbTlpWlhKMExURTBPREl4T1RNdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRjM3BsYkdWcExYSnZZbVZ5ZEMweE5EZ3lNVGt6TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4LjY4N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--908f48584d4e91c5528ee2492cd05892c2925eb3/pexels-szelei-robert-1482193.jpg" for ::1 at 2021-04-16 18:42:56 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPVFkyWVdzeU9XMTFiekJuT1hSdWRuQm1kM1ZwYzJaM2IyWXplUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF5YjJKbGNuUXRjM1J2YTI5bExUY3hORFkyTmk1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXliMkpsY25RdGMzUnZhMjlsTFRjeE5EWTJOaTVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljg0MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e05d87d0f16af758cce2f49c3f5daf175951fbb7/pexels-robert-stokoe-714666.jpg" for ::1 at 2021-04-16 18:42:56 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiR2QwWW5Kb05HRjBlSFJrY1hKaU16UmlkWGQwY1hWdFpEWnViQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF5YjJKbGNuUXRjM1J2YTI5bExUY3hORFkyTmk1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXliMkpsY25RdGMzUnZhMjlsTFRjeE5EWTJOaTVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4LjcxM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--51f2eb3597b6b7c3a789b8cef87fc980b541fb1b/pexels-robert-stokoe-714666.jpg" for ::1 at 2021-04-16 18:42:56 +0300
+  [1m[36mActiveStorage::Blob Load (4.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 81], ["LIMIT", 1]]
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVEJoTkhadmJEQmphM2d4ZW1KeFlXazJNbXBwYTJ4NE9EUXlOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFqWVd4bFltVXRiV2x5WVc1a1lTMDNPVE14TmpZdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRZMkZzWldKbExXMXBjbUZ1WkdFdE56a3pNVFkyTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljg0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--866217eb5feedf2e325c0fd46f0dac5fb1eeb8f1/pexels-calebe-miranda-793166.jpg" for ::1 at 2021-04-16 18:42:56 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-szelei-robert-1482193"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-robert-stokoe-714666"}
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: fi7bvnc1glqnnwglarks3438fy67 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhabWszWW5adVl6Rm5iSEZ1Ym5kbmJHRnlhM016TkRNNFpuazJOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF6ZW1Wc1pXa3RjbTlpWlhKMExURTBPREl4T1RNdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRjM3BsYkdWcExYSnZZbVZ5ZEMweE5EZ3lNVGt6TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjU2LjcxMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3f9b386a37c3fd5c72bc7ef3dda1a4347e03d82b/pexels-szelei-robert-1482193.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhabWszWW5adVl6Rm5iSEZ1Ym5kbmJHRnlhM016TkRNNFpuazJOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF6ZW1Wc1pXa3RjbTlpWlhKMExURTBPREl4T1RNdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRjM3BsYkdWcExYSnZZbVZ5ZEMweE5EZ3lNVGt6TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjU2LjcxMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3f9b386a37c3fd5c72bc7ef3dda1a4347e03d82b/pexels-szelei-robert-1482193.jpg
+Completed 302 Found in 47ms (ActiveRecord: 11.3ms | Allocations: 10562)
+
+
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 924)
+
+
+Completed 200 OK in 5ms (ActiveRecord: 0.0ms | Allocations: 796)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-robert-stokoe-714666"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-calebe-miranda-793166"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 347)
+
+
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 581)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhabWszWW5adVl6Rm5iSEZ1Ym5kbmJHRnlhM016TkRNNFpuazJOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF6ZW1Wc1pXa3RjbTlpWlhKMExURTBPREl4T1RNdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRjM3BsYkdWcExYSnZZbVZ5ZEMweE5EZ3lNVGt6TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjU2LjcxMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3f9b386a37c3fd5c72bc7ef3dda1a4347e03d82b/pexels-szelei-robert-1482193.jpg" for ::1 at 2021-04-16 18:42:56 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-szelei-robert-1482193"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 310)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiRzF1Y204MmVuZG9lR3R2YlhCblpXUjFjM0Z6Wlcxb2JYRjBjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF0YjJoaGJXVmtMV2hoYzNOaGJpMDNOell3TXpBdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiVzlvWVcxbFpDMW9ZWE56WVc0dE56YzJNRE13TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljk0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--5629e36d755e67691d868ab6ec51c6d494d18f40/pexels-mohamed-hassan-776030.jpg" for ::1 at 2021-04-16 18:42:56 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbU5rYkhWclpIQjJhVE55YzJNeVpqTXhlWFo1WjIwNVptbHdOUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF6ZEdGeUxUa3hNekV4TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXpkR0Z5TFRreE16RXhNUzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI5LjI5OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--f199234e556b29d1b46b6df56a29dafd0355e8f2/pexels-star-913111.jpg" for ::1 at 2021-04-16 18:42:56 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-mohamed-hassan-776030"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-star-913111"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOR1V6ZHpGMmNHSndkR04yTVdGb2RqZHBaWFZxT1RCMWIyMW1ZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF0YjJoaGJXVmtMV2hoYzNOaGJpMDNOell3TXpBdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiVzlvWVcxbFpDMW9ZWE56WVc0dE56YzJNRE13TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI4Ljk1M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3a0a2985def36270f1e12109e9e925199908aca5/pexels-mohamed-hassan-776030.jpg" for ::1 at 2021-04-16 18:42:56 +0300
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 595)
+
+
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 464)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjMjFzYmpBMVl6YzNiREV5T1hvMWVUTTRNbTkyWldOeWNXVXdjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKd1pYaGxiSE10WTNKcGMzUnBibUV0Y3lVelJtOXdZVzVrWVNVelJpMDNOVFl5TXpjdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRZM0pwYzNScGJtRXRjeVZEUXlWQk4yOXdZVzVrWVNWRFF5VTROaTAzTlRZeU16Y3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTZUMTU6NDc6MjguOTk4WiIsInB1ciI6ImJsb2Jfa2V5In19--7b661140eaddc9ed903370bba5df1d54ee224d2c/pexels-cristina-s%CC%A7opanda%CC%86-756237.jpg" for ::1 at 2021-04-16 18:42:56 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-mohamed-hassan-776030"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 312)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-cristina-şopandă-756237"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNV3BoY3psbVpXazRiamw2ZG1zNU0zRTVabkJ3YUhsck5HdGxkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFxZFd4cGRYTXRjMmxzZG1WeUxUYzFNek16TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXFkV3hwZFhNdGMybHNkbVZ5TFRjMU16TXpNUzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI5LjA0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ef639cc4e10046600a28cc0ccd717745c1f7328d/pexels-julius-silver-753331.jpg" for ::1 at 2021-04-16 18:42:56 +0300
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms | Allocations: 1246)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-julius-silver-753331"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 483)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiMjluWW5jNWFqbHFlRE15YW14b2RYaG1iM1JuYzNZM2FtZDJPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKd1pYaGxiSE10WTNKcGMzUnBibUV0Y3lVelJtOXdZVzVrWVNVelJpMDNOVFl5TXpjdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRZM0pwYzNScGJtRXRjeVZEUXlWQk4yOXdZVzVrWVNWRFF5VTROaTAzTlRZeU16Y3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTZUMTU6NDc6MjkuMDUzWiIsInB1ciI6ImJsb2Jfa2V5In19--8bca90b9e20a211c6571cb84da8a8e53d75aef79/pexels-cristina-s%CC%A7opanda%CC%86-756237.jpg" for ::1 at 2021-04-16 18:42:56 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-cristina-şopandă-756237"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiV2hrWld3NWQyUmhNWGg1Y0hseU1tUjJhakIxYzJkeU5ESnRaUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpV1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFzZFd0aGN5MHlPVFl5TkRJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiSFZyWVhNdE1qazJNalF5TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjI5LjEwMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1deb0dce7f21be87d6abbc81ec81160e4b1606f9/pexels-lukas-296242.jpg" for ::1 at 2021-04-16 18:42:56 +0300
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms | Allocations: 1137)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-lukas-296242"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 293)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaV3BuY3pCdU9HVjNPSGx0YVhkemQyRXdjV0Z3Ykdob2NISm5jd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF3YVhoaFltRjVMVEUwTkRJME9TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjNCbGVHVnNjeTF3YVhoaFltRjVMVEUwTkRJME9TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjEtMDQtMTZUMTU6NDc6MjguODEyWiIsInB1ciI6ImJsb2Jfa2V5In19--6384ab91bcedf496d14be25d48c6ce1a1719856d/pexels-pixabay-144249.jpg" for ::1 at 2021-04-16 18:42:56 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-pixabay-144249"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 301)
+
+
+Started GET "/categories/1" for ::1 at 2021-04-16 18:43:08 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "categories"."name" FROM "categories" WHERE (id = '1')[0m
+  ↳ app/views/categories/show.html.erb:2
+  [1m[36mArticle Load (3.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" INNER JOIN "article_categories" ON "article_categories"."article_id" = "articles"."id" INNER JOIN "categories" ON "categories"."id" = "article_categories"."category_id" WHERE "categories"."name" = $1[0m  [["name", "Entertainment"]]
+  ↳ app/views/categories/show.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/categories/show.html.erb:5
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/categories/show.html.erb:5
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/show.html.erb:9
+  [1m[36mVote Load (1.8ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 12]]
+  ↳ app/views/categories/show.html.erb:12
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/categories/show.html.erb:5
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/categories/show.html.erb:5
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/show.html.erb:9
+  [1m[36mVote Load (1.7ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 15], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 15]]
+  ↳ app/views/categories/show.html.erb:12
+  Rendered categories/show.html.erb within layouts/application (Duration: 74.3ms | Allocations: 13871)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" LIMIT $1[0m  [["LIMIT", 4]]
+  ↳ app/views/layouts/application.html.erb:24
+  Rendered layout layouts/application.html.erb (Duration: 103.6ms | Allocations: 22097)
+Completed 200 OK in 113ms (Views: 82.6ms | ActiveRecord: 23.6ms | Allocations: 24375)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c1c491da9557a4f9a5dbf6b0fca7e5db90860e33/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e3da9c03c91eeea1e05904b32e8c76e42506aa28/pexels-lukas-296242.jpg" for ::1 at 2021-04-16 18:43:08 +0300
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a6a4c26e741699e1bdd92fb5539a1e467433b3ba/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e3da9c03c91eeea1e05904b32e8c76e42506aa28/pexels-julius-silver-753331.jpg" for ::1 at 2021-04-16 18:43:08 +0300
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c1c491da9557a4f9a5dbf6b0fca7e5db90860e33", "variation_key"=>"[FILTERED]", "filename"=>"pexels-lukas-296242"}
+Processing by ActiveStorage::Representations::RedirectController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a6a4c26e741699e1bdd92fb5539a1e467433b3ba", "variation_key"=>"[FILTERED]", "filename"=>"pexels-julius-silver-753331"}
+  [1m[36mActiveStorage::Blob Load (2.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (5.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (9.4ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 4], ["variation_digest", "o6FvqsFkA8vhEYgai/NTHqoEOlQ="], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (9.6ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 8], ["variation_digest", "o6FvqsFkA8vhEYgai/NTHqoEOlQ="], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (7.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 55], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (4.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 50], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (5.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: tfz10ojkdoos3hr94cy6j2e9xjlb (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkR1o2TVRCdmFtdGtiMjl6TTJoeU9UUmplVFpxTW1VNWVHcHNZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpV1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFzZFd0aGN5MHlPVFl5TkRJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiSFZyWVhNdE1qazJNalF5TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ4OjA4LjM2M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--dcf6c2466c53605d219f5f424f277c60bfbaa7af/pexels-lukas-296242.jpg)[0m
+  [1m[36mActiveStorage::Blob Load (3.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkR1o2TVRCdmFtdGtiMjl6TTJoeU9UUmplVFpxTW1VNWVHcHNZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpV1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFzZFd0aGN5MHlPVFl5TkRJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiSFZyWVhNdE1qazJNalF5TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ4OjA4LjM2M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--dcf6c2466c53605d219f5f424f277c60bfbaa7af/pexels-lukas-296242.jpg
+Completed 302 Found in 53ms (ActiveRecord: 24.8ms | Allocations: 13032)
+
+
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: rcz2dw8l5j20jsxlu0uodtuwm2ac (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbU42TW1SM09HdzFhakl3YW5ONGJIVXdkVzlrZEhWM2JUSmhZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFxZFd4cGRYTXRjMmxzZG1WeUxUYzFNek16TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXFkV3hwZFhNdGMybHNkbVZ5TFRjMU16TXpNUzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ4OjA4LjM2NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--31cd7f1a90f454f50ce9ae80ba65878c272abb80/pexels-julius-silver-753331.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbU42TW1SM09HdzFhakl3YW5ONGJIVXdkVzlrZEhWM2JUSmhZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFxZFd4cGRYTXRjMmxzZG1WeUxUYzFNek16TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXFkV3hwZFhNdGMybHNkbVZ5TFRjMU16TXpNUzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ4OjA4LjM2NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--31cd7f1a90f454f50ce9ae80ba65878c272abb80/pexels-julius-silver-753331.jpg
+Completed 302 Found in 55ms (ActiveRecord: 22.7ms | Allocations: 13272)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhabWszWW5adVl6Rm5iSEZ1Ym5kbmJHRnlhM016TkRNNFpuazJOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF6ZW1Wc1pXa3RjbTlpWlhKMExURTBPREl4T1RNdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRjM3BsYkdWcExYSnZZbVZ5ZEMweE5EZ3lNVGt6TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ3OjU2LjcxMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3f9b386a37c3fd5c72bc7ef3dda1a4347e03d82b/pexels-szelei-robert-1482193.jpg" for ::1 at 2021-04-16 18:43:08 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkR1o2TVRCdmFtdGtiMjl6TTJoeU9UUmplVFpxTW1VNWVHcHNZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpV1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFzZFd0aGN5MHlPVFl5TkRJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiSFZyWVhNdE1qazJNalF5TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ4OjA4LjM2M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--dcf6c2466c53605d219f5f424f277c60bfbaa7af/pexels-lukas-296242.jpg" for ::1 at 2021-04-16 18:43:08 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbU42TW1SM09HdzFhakl3YW5ONGJIVXdkVzlrZEhWM2JUSmhZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFxZFd4cGRYTXRjMmxzZG1WeUxUYzFNek16TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXFkV3hwZFhNdGMybHNkbVZ5TFRjMU16TXpNUzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ4OjA4LjM2NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--31cd7f1a90f454f50ce9ae80ba65878c272abb80/pexels-julius-silver-753331.jpg" for ::1 at 2021-04-16 18:43:08 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-szelei-robert-1482193"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-julius-silver-753331"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 327)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-lukas-296242"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 581)
+
+
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 323)
+
+
+Started GET "/articles/15" for ::1 at 2021-04-16 18:43:11 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (2.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:25:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Article"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:4
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:4
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:9
+  [1m[36mVote Load (3.0ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."article_id" = $1 AND "votes"."user_id" IS NULL LIMIT $2[0m  [["article_id", 15], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:33:in `show_vote_btn'
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."article_id" = $1[0m  [["article_id", 15]]
+  ↳ app/views/articles/show.html.erb:12
+  Rendered articles/show.html.erb within layouts/application (Duration: 25.0ms | Allocations: 4566)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" LIMIT $1[0m  [["LIMIT", 4]]
+  ↳ app/views/layouts/application.html.erb:24
+  Rendered layout layouts/application.html.erb (Duration: 62.5ms | Allocations: 12935)
+Completed 200 OK in 72ms (Views: 50.7ms | ActiveRecord: 14.7ms | Allocations: 14202)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbU42TW1SM09HdzFhakl3YW5ONGJIVXdkVzlrZEhWM2JUSmhZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFxZFd4cGRYTXRjMmxzZG1WeUxUYzFNek16TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXFkV3hwZFhNdGMybHNkbVZ5TFRjMU16TXpNUzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ4OjA4LjM2NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--31cd7f1a90f454f50ce9ae80ba65878c272abb80/pexels-julius-silver-753331.jpg" for ::1 at 2021-04-16 18:43:11 +0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkR1o2TVRCdmFtdGtiMjl6TTJoeU9UUmplVFpxTW1VNWVHcHNZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpV1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFzZFd0aGN5MHlPVFl5TkRJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiSFZyWVhNdE1qazJNalF5TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIxLTA0LTE2VDE1OjQ4OjA4LjM2M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--dcf6c2466c53605d219f5f424f277c60bfbaa7af/pexels-lukas-296242.jpg" for ::1 at 2021-04-16 18:43:11 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-julius-silver-753331"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pexels-lukas-296242"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 325)
+
+
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 564)
+
+
