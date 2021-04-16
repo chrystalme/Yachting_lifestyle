@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+/* stylelint-disable-next-line string-quotes */
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 body {
@@ -25,18 +27,18 @@ nav {
   text-transform: uppercase;
 
   a {
-    text-decoration: none;
-    color: grey;
+    color: rgb(128, 128, 128);
     font-size: small;
+    text-decoration: none;
   }
 }
 
 a {
+  color: rgb(255, 255, 255);
   text-decoration: none;
-  color: white;
 
   &:hover {
-    color: tomato;
+    color: rgb(255, 99, 71);
   }
 }
 
@@ -45,35 +47,35 @@ article {
   width: 100%;
 
   img {
-    width: 100%;
     height: 200px;
+    width: 100%;
   }
 
   .other-article {
     position: relative;
+  }
 
-    h5 {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      color: white;
-    }
+  h5 {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
   }
 
   p {
-    position: absolute;
     bottom: 0.5rem;
+    color: rgb(255, 255, 255);
     font-size: small;
     left: 0.5rem;
-    color: white;
+    position: absolute;
   }
 }
 
 footer {
   background-color: $yellow-900;
-  position: relative;
-  color: azure;
   bottom: 0;
+  color: rgb(240, 255, 255);
+  position: relative;
 
   .item {
     font-size: xx-small;
@@ -82,8 +84,8 @@ footer {
 
 .category {
   img {
-    width: 50%;
     height: 350px;
+    width: 50%;
   }
 }
 
@@ -92,58 +94,57 @@ footer {
 }
 
 .featured {
-  border-top: 0.2rem solid teal;
+  border-top: 0.2rem solid rgb(0, 128, 128);
+  height: max-content;
   position: relative;
   width: 100%;
-  height: max-content;
 
   img {
-    width: 100%;
     height: 320px;
+    width: 100%;
   }
 
   h6 {
-    position: absolute;
     bottom: 3rem;
+    color: rgb(255, 99, 71);
     left: 0.5rem;
-    color: tomato;
+    position: absolute;
   }
 
   p {
-    position: absolute;
     bottom: 1.2rem;
+    color: rgb(255, 255, 255);
     font-size: small;
     left: 0.5rem;
-    color: white;
+    position: absolute;
   }
 }
-
+/* stylelint-disable */
 nav::after {
-  content: "";
-  position: absolute;
-  height: 0.2rem;
-  left: 0;
-  right: 0;
-  bottom: 0;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff3333+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+100,2a8ad8+100,2a8ad8+100,207bca+100,2a8ad8+100,2a8ad8+100,2a8ad8+100,2a8ad8+100,207bca+100,207bca+100,207bca+100,7ebae8+100,2a8ad8+100 */
-  background: #ff3333; /* Old browsers */
-  background: -moz-linear-gradient(
-    left,
-    #ff3333 20%,
-    #2a8ad8 20%,
-    #2a8ad8 100%
-  ); /* FF3.6-15 */
+  background: #f33; /* Old browsers */
+  background: -moz-linear-gradient (left, #f33 20%, #2a8ad8 20%, #2a8ad8 100%); /* FF3.6-15 */
+
   background: -webkit-linear-gradient(
     left,
-    #ff3333 20%,
+    #f33 20%,
     #2a8ad8 20%,
     #2a8ad8 100%
   ); /* Chrome10-25,Safari5.1-6 */
+
   background: linear-gradient(
     to right,
-    #ff3333 20%,
+    #f33 20%,
     #2a8ad8 20%,
     #2a8ad8 100%
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3333', endColorstr='#2a8ad8',GradientType=1 ); /* IE6-9 */
+
+  bottom: 0;
+  content: "";
+  filter: progid:DXImagetransform.microsoft.gradient(startColorstr='#ff3333', endColorstr='#2a8ad8', GradientType=1); /* IE6-9 */
+  height: 0.2rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+  /* stylelint-enable */
 }

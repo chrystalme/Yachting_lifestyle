@@ -22,7 +22,7 @@
           <%= link_to "Home", articles_path, class: 'px-1' %>
           <% end %>
           <% Category.limit(4).each do |cat| %>
-          <%= link_to cat.name, category_path(cat) %>
+          <%= link_to cat.name, category_path(cat), class: 'px-1' %>
           <% end %>
         </div>
         <div class="">
