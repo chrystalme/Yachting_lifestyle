@@ -25,10 +25,6 @@ body {
 a {
   color: rgb(255, 255, 255);
   text-decoration: none;
-
-  &:hover {
-    color: rgb(255, 99, 71);
-  }
 }
 
 nav {
@@ -40,6 +36,10 @@ nav {
     font-size: small;
     text-decoration: none;
   }
+}
+
+a:hover {
+  color: rgb(255, 99, 71);
 }
 
 article {

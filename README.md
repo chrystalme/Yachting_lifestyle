@@ -1,7 +1,5 @@
 # Social media app with Ruby on Rails
 
-![screenshot](./app/assets/images/Screenshot-1.png)
-
 ![screenshot](./app/assets/images/Screenshot-2.png)
 
 ![screenshot](./app/assets/images/Screenshot-3.png)
