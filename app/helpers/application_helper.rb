@@ -1,8 +1,13 @@
 module ApplicationHelper
   def show_flash
     output = ''
-    output << "<div class='input-group p-3 mb-2 bg-success text-white fs-6'>#{flash[:notice]}</div>" if flash[:notice]
-    output << "<div class='input-group p-3 mb-2 bg-danger text-white fs-6'>#{flash[:alert]}</div>" if flash[:alert]
+    output << "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+    #{flash[:notice]}
+    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>" if flash[:notice]
+    output << "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+    #{flash[:alert]}<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>" if flash[:alert]
     output.html_safe
   end
 
