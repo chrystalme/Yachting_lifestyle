@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Yachting Lifestyle</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'https://use.fontawesome.com/releases/v5.7.0/css/all.css' %>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-light d-flex justify-content-between">
+      <div class="container-fluid">
+        <%= link_to "Yatching Lifestyle", root_path, class: 'navbar-brand' %>
+        <div class="">
+          <%if logged_in? %>
+          <%= link_to "Home", articles_path, class: 'px-1' %>
+          <% end %>
+          <% Category.limit(4).each do |cat| %>
+          <%= link_to cat.name, category_path(cat), class: 'px-1' %>
+          <% end %>
+        </div>
+        <div class="">
+          <%= show_header %>
+        </div>
+
+      </div>
+
+    </nav>
+  </header>
+  <%= show_flash %>
+  <%= yield %>
+  <footer class='mt-3 container-fluid d-flex justify-content-between'>
+    <div class="">
+      <%= link_to "Yatching Lifestyle", root_path, class: 'navbar-brand' %>
+    </div>
+
+    <div class="">
+      <a href="#" class="px-1">privacy policy</a>
+      <a href="#" class="px-1">terms &amp; Conditions </a>
+      <span class="px-1">Copyright 2021. All rights reserved</span>
+    </div>
+    <div class="">
+      <span> connect with us
+        <i class="px-1 fab fa-twitter"></i>
+        <i class="px-1 fab fa-instagram"></i>
+        <i class="px-1 fab fa-facebook"></i></span>
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* stylelint-disable-next-line string-quotes */
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  background-color: $yellow-900;
+  padding: 5px;
+}
+
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+nav {
+  background-color: $gray-100;
+  text-transform: uppercase;
+
+  a {
+    color: rgb(128, 128, 128);
+    font-size: small;
+    text-decoration: none;
+  }
+}
+
+a:hover {
+  color: rgb(255, 99, 71);
+}
+
+article {
+  background-color: $indigo-100;
+  width: 100%;
+
+  img {
+    height: 200px;
+    width: 100%;
+  }
+
+  .other-article {
+    position: relative;
+  }
+
+  h5 {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  p {
+    bottom: 0.5rem;
+    color: rgb(255, 255, 255);
+    font-size: small;
+    left: 0.5rem;
+    position: absolute;
+  }
+}
+
+footer {
+  background-color: $yellow-900;
+  bottom: 0;
+  color: rgb(240, 255, 255);
+  position: relative;
+
+  .item {
+    font-size: xx-small;
+  }
+}
+
+.category {
+  img {
+    height: 350px;
+    width: 50%;
+  }
+}
+
+.card-size {
+  width: 50%;
+}
+
+.featured {
+  border-top: 0.2rem solid rgb(0, 128, 128);
+  height: max-content;
+  position: relative;
+  width: 100%;
+
+  img {
+    height: 320px;
+    width: 100%;
+  }
+
+  h6 {
+    bottom: 3rem;
+    color: rgb(255, 99, 71);
+    left: 0.5rem;
+    position: absolute;
+  }
+
+  p {
+    bottom: 1.2rem;
+    color: rgb(255, 255, 255);
+    font-size: small;
+    left: 0.5rem;
+    position: absolute;
+  }
+}
+/* stylelint-disable */
+nav::after {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff3333+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+100,2a8ad8+100,2a8ad8+100,207bca+100,2a8ad8+100,2a8ad8+100,2a8ad8+100,2a8ad8+100,207bca+100,207bca+100,207bca+100,7ebae8+100,2a8ad8+100 */
+  background: #f33; /* Old browsers */
+  background: -moz-linear-gradient (left, #f33 20%, #2a8ad8 20%, #2a8ad8 100%); /* FF3.6-15 */
+
+  background: -webkit-linear-gradient(
+    left,
+    #f33 20%,
+    #2a8ad8 20%,
+    #2a8ad8 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+
+  background: linear-gradient(
+    to right,
+    #f33 20%,
+    #2a8ad8 20%,
+    #2a8ad8 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  bottom: 0;
+  content: "";
+  filter: progid:DXImagetransform.microsoft.gradient(startColorstr='#ff3333', endColorstr='#2a8ad8', GradientType=1); /* IE6-9 */
+  height: 0.2rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+  /* stylelint-enable */
+}
