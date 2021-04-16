@@ -11,8 +11,8 @@ class VotesController < ApplicationController
   def destroy
     vote = Vote.find_by(id: params[:id], user: current_user, article_id: params[:article_id])
     if vote
-    vote.destroy
-      redirect_to articles_path, notice: "You have unvoted."
+      vote.destroy
+      redirect_to articles_path, notice: 'You have unvoted.'
     else
       redirect_to articles_path, alert: 'You cannot unvote an article you did not vote.'
     end

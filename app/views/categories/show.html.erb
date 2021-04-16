@@ -1,4 +1,4 @@
-<div class='text-secondary'>
+<div class='category text-secondary'>
   <% @article = Article.category(Category.where('id = ?', params[:id]).pluck(:name)[0])%>
   <% @article.each do |art_cat| %>
   <div class='d-flex flex-row mb-3'>

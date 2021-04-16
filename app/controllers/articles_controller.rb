@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = current_user.articles.build
-    @category_options = Category.all.map{ |c| [c.name, c.id] }
+    @category_options = Category.all.map { |c| [c.name, c.id] }
   end
 
   def create
@@ -45,6 +45,6 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :text, :image, :category_id)
   end
 
-  # def set_article    
+  # def set_article
   # end
 end
