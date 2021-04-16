@@ -1,6 +1,5 @@
-<%#= button_to "Edit", article_path(@article) %>
-<div class='container text-white'>
-  <div class='row'>
+<div class='d-flex text-white'>
+  <div class='row g-0'>
     <div class='col-7'>
       <%= image_tag(@article.image.variant(resize_to_limit: [500, 500]))%>
     </div>
@@ -14,4 +13,5 @@
           </div>
     </div>
   </div>
+</div>
 </div>

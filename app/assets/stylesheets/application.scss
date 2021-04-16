@@ -52,6 +52,13 @@ article {
       color: white;
     }
   }
+  p {
+    position: absolute;
+    bottom: 0.5rem;
+    font-size: small;
+    left: 0.5rem;
+    color: white;
+  }
 }
 footer {
   background-color: $yellow-900;
@@ -85,6 +92,7 @@ footer {
   p {
     position: absolute;
     bottom: 1.2rem;
+    font-size: small;
     left: 0.5rem;
     color: white;
   }
