@@ -1,6 +1,6 @@
 <section class='row g-0'>
   <div class='featured col-12 d-flex justify-content-center'>
-    <% featured_article = Article.find(Vote.group(:article_id).count.max_by{|k,v| v}[0])%>
+    <% featured_article = Article.featured%>
     <% if featured_article.image.attached? %>
     <%= image_tag(featured_article.image.variant(resize_to_limit: [1000,600])) %>
     <h6><strong><%=link_to(featured_article.title, article_path(featured_article))%></strong></h6>
@@ -8,7 +8,7 @@
     <% end %>
   </div>
   <article class='d-flex bg-white'>
-    <% Article.where.not('id = ?', Vote.group(:article_id).count.max_by{|k,v| v}[0]).limit(5).each do |article| %>
+    <% Article.others.each do |article| %>
     <% if article.image.attached? %>
     <div class='col-3'>
       <div class='other-article'>
@@ -17,7 +17,7 @@
 
           <%= article.text.truncate_words(5) %>
         </p> -->
-        <h5 class=''><%#=link_to(article.categories.pluck(:name)[0],category_path(article.categories.pluck(:id)[0]) ) %></h5>
+        <h5 class=''><%=link_to(article.categories.pluck(:name)[0],category_path(article.categories.pluck(:id)[0]) ) %></h5>
       </div>
     </div>
 

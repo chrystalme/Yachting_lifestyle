@@ -1,5 +1,5 @@
 <%#= button_to "Edit", article_path(@article) %>
-<div class='container text-secondary'>
+<div class='text-secondary'>
   <div class='row'>
     <div class='col-7'>
       <% @article = Article.category(Category.where('id = ?', params[:id]).pluck(:name)[0])%>
