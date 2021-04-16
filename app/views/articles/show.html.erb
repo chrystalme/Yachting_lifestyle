@@ -1,5 +1,17 @@
-<%= button_to "Edit", article_path(@article) %>
-<%= image_tag(@article.image.variant(resize_to_limit: [800, 800]))%>
-<%= @article.title %>
-<%= @article.text %>
-<%= @article.author.name %>
+<%#= button_to "Edit", article_path(@article) %>
+<div class='container text-white'>
+  <div class='row'>
+    <div class='col-7'>
+      <%= image_tag(@article.image.variant(resize_to_limit: [500, 500]))%>
+    </div>
+    <div class='col-5'>
+      <strong><%= @article.title %></strong>
+      <p><%= @article.text %></p>
+      <em><%= @article.author.name %><em>
+          <div class='mt-3'>
+            <%= show_vote_btn(@article)%>
+            <em class="badge bg-primary mx-3"><%= @article.votes.count.to_s + ' Vote(s)' %></em>
+          </div>
+    </div>
+  </div>
+</div>

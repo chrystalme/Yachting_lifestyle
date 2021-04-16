@@ -1,0 +1,22 @@
+<%#= button_to "Edit", article_path(@article) %>
+<div class='container text-secondary'>
+  <div class='row'>
+    <div class='col-7'>
+      <% @article = Article.category(Category.where('id = ?', params[:id]).pluck(:name)[0])%>
+      <% @article.each do |art_cat| %>
+      <%# if art_cat.image_attached? %>
+      <%= image_tag(art_cat.image.variant(resize_to_limit: [500, 500]))%>
+      <%# end %>
+    </div>
+    <div class='col-5'>
+      <strong><%= art_cat.title %></strong>
+      <p><%= art_cat.text %></p>
+      <em><%= art_cat.author.name %><em>
+          <div class='mt-3'>
+            <%= show_vote_btn(art_cat)%>
+            <em class="badge bg-primary mx-3"><%= art_cat.votes.count.to_s + ' Vote(s)' %></em>
+          </div>
+          <% end %>
+    </div>
+  </div>
+</div>
