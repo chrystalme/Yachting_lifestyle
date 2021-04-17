@@ -7,7 +7,7 @@ module ArticlesHelper
          <div class='card'>
        <div class='row g-0'>
             <div class='col'>
-              #{link_to(cl_image_tag(article.image, article_path(article)))}
+              #{link_to(image_tag(article.image, article_path(article)))}
             </div>
             <div class='col'>
               <div class='card-body text-black'>

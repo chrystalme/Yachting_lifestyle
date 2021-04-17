@@ -17,7 +17,7 @@ module UsersHelper
 
       output << "<div class='col-3'>
         <div class='other-article'>
-          #{link_to(cl_image_tag(article.image), article_path(article))}
+          #{link_to(image_tag(article.image), article_path(article))}
           <p>
             #{article.text.truncate_words(5)}
           </p>
