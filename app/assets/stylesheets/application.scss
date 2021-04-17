@@ -93,6 +93,29 @@ footer {
   width: 50%;
 }
 
+ul {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+li {
+  display: inline;
+  float: left;
+  line-height: 1.5em;
+}
+
+.double {
+  width: 100%;
+
+  li {
+    width: 50%;
+  } /* 2 col */
+}
+
+.title {
+  color: rgb(20, 20, 20);
+}
+
 .featured {
   border-top: 0.2rem solid rgb(0, 128, 128);
   height: max-content;
@@ -119,6 +142,11 @@ footer {
     position: absolute;
   }
 }
+
+a:hover {
+  color: rgb(255, 99, 71);
+}
+
 /* stylelint-disable */
 nav::after {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff3333+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+20,2a8ad8+100,2a8ad8+100,2a8ad8+100,207bca+100,2a8ad8+100,2a8ad8+100,2a8ad8+100,2a8ad8+100,207bca+100,207bca+100,207bca+100,7ebae8+100,2a8ad8+100 */
