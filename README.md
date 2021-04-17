@@ -57,6 +57,8 @@ Set up project using the above specifications
 - run `rails db:migrate ` to create schema
 - use `rails webpacker:install` to install webpacker
 - use `rails s` to run the rails server
+- use `rails c` to go to the console
+- add new category by running `Category.create!(name: 'Name of Category')`. This helps to be able to create article.
 
 ## Authors
 
