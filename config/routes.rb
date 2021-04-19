@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   delete 'log_out', to: 'sessions#destroy'
   resources :articles do
      resources :votes, only: %i[create destroy]
+     resources :bookmarks, only: %i[create destroy]
   end
   resources :categories, only: %i[index show]
 

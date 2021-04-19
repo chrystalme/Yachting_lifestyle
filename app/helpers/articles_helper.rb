@@ -20,6 +20,7 @@ module ArticlesHelper
                           <em class='badge bg-primary mx-3'>
                           #{"#{article.votes.count} Vote(s)"}
                           </em>
+                          #{show_bookmark_btn(article)}
                           <h6 class='card-text mt-2'><strong>Author: </strong>#{article.author.name} </h6>
                         </div>
                   </div>

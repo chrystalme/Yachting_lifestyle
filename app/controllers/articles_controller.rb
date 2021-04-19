@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :logged_in?
+  before_action :logged_in?, except: [:show]
   # before_action :set_article, only: %i[show edit update destroy]
   def index
     @articles = Article.all.ordered_by_most_recent
@@ -37,6 +37,10 @@ class ArticlesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def bookmarks
+    @bookmarked_articles = Article.user_bookmarks(current_user)
   end
 
   private

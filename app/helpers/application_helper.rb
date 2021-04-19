@@ -61,4 +61,18 @@ module ApplicationHelper
     end
   end
   # rubocop:enable Style/GuardClause
+
+  # rubocop:disable Style/GuardClause
+  def show_bookmark_btn(article)
+    bookmark = Bookmark.find_by(article: article, user: current_user)
+    if logged_in?
+      if bookmark
+        link_to('Remove bookmark', article_bookmark_path(id: bookmark.id, article_id: article.id), method: :delete,
+                                                                                  class: 'btn btn-danger')
+      else
+        link_to('Bookmark', article_bookmarks_path(article_id: article.id), method: :post, class: 'btn btn-primary')
+      end
+    end
+  end
+  # rubocop:enable Style/GuardClause
 end
