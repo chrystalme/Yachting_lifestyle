@@ -60,6 +60,9 @@ Set up project using the above specifications
 - use `rails c` to go to the console
 - add new category by running `Category.create!(name: 'Name of Category')`. This helps to be able to create article.
 
+## Live Link
+Yachting-lifestyle: [yachtinglifestyle](http://yachting-lifestyle.herokuapp.com/)
+
 ## Authors
 
 👤 **Malieze Afam Ifeanyi**
