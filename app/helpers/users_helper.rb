@@ -2,7 +2,7 @@ module UsersHelper
   def show_featured
     output = ''
     featured_article = Article.featured
-    if featured_article.image.attached?
+    if featured_article.image.attached? 
       output << "#{image_tag(featured_article.image.variant(resize_to_limit: [1000, 600]))}
     <h6><strong>#{link_to(featured_article.title, article_path(featured_article))}</strong></h6>
     <p> #{featured_article.text.truncate_words(30)}</p>"
