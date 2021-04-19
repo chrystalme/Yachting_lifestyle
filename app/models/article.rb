@@ -19,7 +19,13 @@ class Article < ApplicationRecord
 
   scope :category, ->(name) { Article.joins(:categories).where(categories: { name: name }) }
 
-  scope :others, -> { Article.where.not('id = ?', Vote.group(:article_id).count.max_by { |_k, v| v }[0]).limit(4) }
+  scope :others, lambda {
+                   Article.where.not('id = ?', Vote.group(:article_id)
+                     .count.max_by { |_k, v| v }[0]).limit(4)
+                 }
 
-  scope :user_bookmarks, ->(current_user) { includes(:author).join(:bookmarks).where(' user_id = ?', current_user)}
+  scope :user_bookmarks, lambda { |current_user|
+                           includes(:author).joins(:bookmarks)
+                             .where(' user_id = ?', current_user.id.to_s)
+                         }
 end

@@ -72,6 +72,7 @@ article {
 }
 
 ul {
+  display: contents;
   margin-bottom: 20px;
   overflow: hidden;
 }
@@ -82,12 +83,14 @@ li {
   line-height: 1.5em;
 }
 
-.double {
-  width: 100%;
+.article-header {
+  a {
+    color: rgb(20, 20, 20);
+  }
+}
 
-  li {
-    width: 50%;
-  } /* 2 col */
+.my-articles {
+  color: rgb(240, 255, 255);
 }
 
 .title {
@@ -107,7 +110,7 @@ footer {
 
 .category {
   img {
-    height: 350px;
+    height: 200px;
     width: 50%;
   }
 }
@@ -116,27 +119,12 @@ footer {
   width: 50%;
 }
 
-ul {
-  margin-bottom: 20px;
-  overflow: hidden;
-}
-
-li {
-  display: inline;
-  float: left;
-  line-height: 1.5em;
-}
-
 .double {
   width: 100%;
 
   li {
     width: 50%;
   } /* 2 col */
-}
-
-.title {
-  color: rgb(20, 20, 20);
 }
 
 .featured {

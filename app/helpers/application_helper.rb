@@ -4,12 +4,11 @@ module ApplicationHelper
     if flash[:notice]
       output << "<div class='alert alert-success alert-dismissible fade show' role='alert'>
       #{flash[:notice]}
-      <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
       </div>"
     end
     if flash[:alert]
       output << "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
-      #{flash[:alert]}<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+      #{flash[:alert]}
       </div>"
     end
     output.html_safe
@@ -39,13 +38,11 @@ module ApplicationHelper
 
   def show_nav
     output = ''
-      if logged_in? 
-        output << "#{link_to 'Home', articles_path, class: 'px-1'}"
-      end
-      Category.limit(4).each do |cat| 
-        output << "#{link_to cat.name, category_path(cat), class: 'px-1'}" 
-      end
-      output.html_safe
+    output << (link_to 'Home', articles_path, class: 'px-1').to_s if logged_in?
+    Category.limit(4).each do |cat|
+      output << (link_to cat.name, category_path(cat), class: 'px-1').to_s
+    end
+    output.html_safe
   end
 
   # rubocop:disable Style/GuardClause
@@ -67,8 +64,9 @@ module ApplicationHelper
     bookmark = Bookmark.find_by(article: article, user: current_user)
     if logged_in?
       if bookmark
-        link_to('Remove bookmark', article_bookmark_path(id: bookmark.id, article_id: article.id), method: :delete,
-                                                                                  class: 'btn btn-danger')
+        link_to('Remove bookmark', article_bookmark_path(id: bookmark.id, article_id: article.id),
+                method: :delete,
+                class: 'btn btn-danger')
       else
         link_to('Bookmark', article_bookmarks_path(article_id: article.id), method: :post, class: 'btn btn-primary')
       end

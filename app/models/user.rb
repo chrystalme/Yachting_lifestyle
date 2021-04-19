@@ -9,7 +9,7 @@ class User < ApplicationRecord
   def bookmark(article)
     bookmarked_articles << article
   end
-  
+
   def unbookmark(article)
     bookmarked_articles.delete(article)
   end

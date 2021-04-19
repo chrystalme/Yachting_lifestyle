@@ -8,7 +8,6 @@ class BookmarksController < ApplicationController
     @bookmark = current_user.bookmark(@article)
     flash[:notice] = "#{@article.title} has been bookmarked."
     redirect_to request.referer
-  
   end
 
   def destroy
@@ -17,5 +16,4 @@ class BookmarksController < ApplicationController
     flash[:alert] = "#{@article.title} has been unbookmarked."
     redirect_to request.referer
   end
-  
 end

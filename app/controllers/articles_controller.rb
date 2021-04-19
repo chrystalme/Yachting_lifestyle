@@ -8,6 +8,8 @@ class ArticlesController < ApplicationController
   def new
     @article = current_user.articles.build
     @category_options = Category.all.map { |c| [c.name, c.id] }
+    @my_articles = current_user.articles
+    @bookmarked_articles = Article.user_bookmarks(current_user)
   end
 
   def create
