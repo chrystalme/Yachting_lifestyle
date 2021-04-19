@@ -154,7 +154,7 @@ class DelegatedModule extends Module {
 		}
 
 		const sources = new Map();
-		if (this.useSourceMap) {
+		if (this.useSourceMap || this.useSimpleSourceMap) {
 			sources.set("javascript", new OriginalSource(str, this.identifier()));
 		} else {
 			sources.set("javascript", new RawSource(str));
@@ -223,6 +223,14 @@ class DelegatedModule extends Module {
 		this.userRequest = m.userRequest;
 		this.originalRequest = m.originalRequest;
 		this.delegateData = m.delegateData;
+	}
+
+	/**
+	 * Assuming this module is in the cache. Remove internal references to allow freeing some memory.
+	 */
+	cleanupForCache() {
+		super.cleanupForCache();
+		this.delegateData = undefined;
 	}
 }
 
