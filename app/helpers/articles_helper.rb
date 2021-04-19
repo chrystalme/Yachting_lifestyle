@@ -8,7 +8,6 @@ module ArticlesHelper
         <div class='card'>
           <div class='row g-0'>
                 <div class='col'>
-                  {link_to(image_tag(article.image.variant(resize_to_limit: [300, 300])), article_path(article))}
                   #{link_to(cl_image_tag(article.image.key, width: 300, crop: :scale), article_path(article))}
                 </div>
                   <div class='col'>
