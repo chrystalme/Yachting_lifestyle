@@ -2,7 +2,7 @@
   <% @article = Article.category(Category.where('id = ?', params[:id]).pluck(:name)[0])%>
   <% @article.each do |art_cat| %>
   <div class='d-flex flex-row mb-3'>
-    <%= image_tag(art_cat.image.variant(resize_to_limit: [500, 500]))%>
+    <%= image_tag(art_cat.image, width: 500, height: 500)%>
     <div class='d-flex flex-column mx-2'>
       <strong><%=link_to(art_cat.title, article_path(art_cat.id))%></strong>
       <p><%= art_cat.text.truncate_words(5) %></p>

@@ -10,13 +10,15 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag 'https://use.fontawesome.com/releases/v5.7.0/css/all.css' %>
+
+
 </head>
 
 <body>
   <header>
     <nav class="navbar navbar-light d-flex justify-content-between">
       <div class="container-fluid">
-        <%= link_to "Yatching Lifestyle", root_path, class: 'navbar-brand' %>
+        <%= link_to "Yachting Lifestyle", root_path, class: 'navbar-brand' %>
         <div class="">
           <%if logged_in? %>
           <%= link_to "Home", articles_path, class: 'px-1' %>
@@ -37,7 +39,7 @@
   <%= yield %>
   <footer class='mt-3 container-fluid d-flex justify-content-between'>
     <div class="">
-      <%= link_to "Yatching Lifestyle", root_path, class: 'navbar-brand' %>
+      <%= link_to "Yachting Lifestyle", root_path, class: 'navbar-brand' %>
     </div>
 
     <div class="">
@@ -52,7 +54,8 @@
         <i class="px-1 fab fa-facebook"></i></span>
     </div>
   </footer>
-
+  <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js' %>
+  <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js' %>
 </body>
 
 </html>
