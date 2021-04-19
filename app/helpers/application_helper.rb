@@ -37,6 +37,17 @@ module ApplicationHelper
     output.html_safe
   end
 
+  def show_nav
+    output = ''
+      if logged_in? 
+        output << "#{link_to 'Home', articles_path, class: 'px-1'}"
+      end
+      Category.limit(4).each do |cat| 
+        output << "#{link_to cat.name, category_path(cat), class: 'px-1'}" 
+      end
+      output.html_safe
+  end
+
   # rubocop:disable Style/GuardClause
   def show_vote_btn(article)
     vote = Vote.find_by(article: article, user: current_user)

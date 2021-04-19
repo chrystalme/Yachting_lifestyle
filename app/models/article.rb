@@ -16,5 +16,5 @@ class Article < ApplicationRecord
 
   scope :category, ->(name) { Article.joins(:categories).where(categories: { name: name }) }
 
-  scope :others, -> { Article.where.not('id = ?', Vote.group(:article_id).count.max_by { |_k, v| v }[0]).limit(5) }
+  scope :others, -> { Article.where.not('id = ?', Vote.group(:article_id).count.max_by { |_k, v| v }[0]).limit(4) }
 end

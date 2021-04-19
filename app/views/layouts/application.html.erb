@@ -20,12 +20,7 @@
       <div class="container-fluid">
         <%= link_to "Yachting Lifestyle", root_path, class: 'navbar-brand' %>
         <div class="">
-          <%if logged_in? %>
-          <%= link_to "Home", articles_path, class: 'px-1' %>
-          <% end %>
-          <% Category.limit(4).each do |cat| %>
-          <%= link_to cat.name, category_path(cat), class: 'px-1' %>
-          <% end %>
+          <%= show_nav %>
         </div>
         <div class="">
           <%= show_header %>
