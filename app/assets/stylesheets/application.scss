@@ -38,12 +38,7 @@ nav {
   }
 }
 
-a:hover {
-  color: rgb(255, 99, 71);
-}
-
 article {
-  background-color: $indigo-100;
   width: 100%;
 
   img {
@@ -69,6 +64,29 @@ article {
     left: 0.5rem;
     position: absolute;
   }
+}
+
+ul {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+li {
+  display: inline;
+  float: left;
+  line-height: 1.5em;
+}
+
+.double {
+  width: 100%;
+
+  li {
+    width: 50%;
+  } /* 2 col */
+}
+
+.title {
+  color: rgb(20, 20, 20);
 }
 
 footer {

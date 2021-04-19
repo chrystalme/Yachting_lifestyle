@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: yatch-lifestyle
+  api_key: '483948511977555'
+  api_secret: Eyb2j--D5Gof9Lyv6QVwusFfvL4
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: yatch-lifestyle
+  api_key: '483948511977555'
+  api_secret: Eyb2j--D5Gof9Lyv6QVwusFfvL4
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: yatch-lifestyle
+  api_key: '483948511977555'
+  api_secret: Eyb2j--D5Gof9Lyv6QVwusFfvL4
+  enhance_image_tag: true
+  static_file_support: false
