@@ -39,5 +39,5 @@ yarn-debug.log*
 .DS_Store
 node_modules/.bin/cssesc
 node_modules/.bin/mkdirp
-package-lock.json
+package.json
 
