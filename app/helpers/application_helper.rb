@@ -29,9 +29,8 @@ module ApplicationHelper
   def show_header
     output = ''
     output << if logged_in?
-                "<a href='/articles/new'> Welcome #{current_user.name}</a> | #{link_to 'Log Out', log_out_path,
-                                                                                       method: :delete
-                                                                             }"
+                "<a href='/articles/new'> Welcome #{current_user.name}</a> 
+                | #{link_to 'Log Out', log_out_path, method: :delete }"
               else
                 "#{link_to 'Register', sign_up_path} | #{link_to 'Login', log_in_path}"
               end

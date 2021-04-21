@@ -3,7 +3,7 @@ class Article < ApplicationRecord
   has_many :categories, through: :article_categories
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   has_many :votes, dependent: :destroy
-  has_many :voters, through: :votes
+  has_many :voters, through: :votes, source: :user
   has_one_attached :image
 
   has_many :bookmarks, foreign_key: 'article_id', dependent: :destroy
