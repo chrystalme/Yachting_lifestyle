@@ -30,7 +30,7 @@ module ApplicationHelper
     output = ''
     output << if logged_in?
                 "<a href='/articles/new'> Welcome #{current_user.name}</a> 
-                | #{link_to 'Log Out', log_out_path, method: :delete }"
+                | #{button_to 'Log Out', log_out_path, method: :delete }"
               else
                 "#{link_to 'Register', sign_up_path} | #{link_to 'Login', log_in_path}"
               end
@@ -51,10 +51,10 @@ module ApplicationHelper
     vote = Vote.find_by(article: article, user: current_user)
     if logged_in?
       if vote
-        link_to('Unvote', article_vote_path(id: vote.id, article_id: article.id), method: :delete,
-                                                                                  class: 'btn btn-danger')
+        button_to('Unvote', article_vote_path(id: vote.id, article_id: article.id), method: :delete,
+                                                                                  class: 'btn btn-danger mb-2')
       else
-        link_to('Vote', article_votes_path(article_id: article.id), method: :post, class: 'btn btn-primary')
+        button_to('Vote', article_votes_path(article_id: article.id), method: :post, class: 'btn btn-primary mb-2')
       end
     end
   end
@@ -65,11 +65,11 @@ module ApplicationHelper
     bookmark = Bookmark.find_by(article: article, user: current_user)
     if logged_in?
       if bookmark
-        link_to('Remove bookmark', article_bookmark_path(id: bookmark.id, article_id: article.id),
+        button_to('Remove bookmark', article_bookmark_path(id: bookmark.id, article_id: article.id),
                 method: :delete,
                 class: 'btn btn-danger')
       else
-        link_to('Bookmark', article_bookmarks_path(article_id: article.id), method: :post, class: 'btn btn-primary')
+        button_to('Bookmark', article_bookmarks_path(article_id: article.id), method: :post, class: 'btn btn-primary')
       end
     end
   end

@@ -3,10 +3,10 @@ module UsersHelper
     output = ''
     featured_article = Article.featured
     if Article.none?
-      output << '<h6><strong>You have no created articles</strong></h6>'
+      output << '<h6><strong>You have no created articles. Get creating.</strong></h6>'
     elsif featured_article.nil?
       art = Article.ordered_by_most_recent.first
-      output << "#{cl_image_tag(art.image.key, width: 1000, crop: :scale)}
+      output << "#{image_tag(art.image.key, width: 1000, crop: :scale)}
       <h6><strong>#{link_to(art.title, article_path(art))}</strong></h6>
       <p> #{art.text.truncate_words(30)}</p>"
     else

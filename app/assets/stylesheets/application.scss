@@ -31,10 +31,13 @@ nav {
   background-color: rgb(243, 243, 243);
   text-transform: uppercase;
 
-  a {
+  a,
+  input[type="submit"] {
     color: rgb(128, 128, 128);
     font-size: small;
     text-decoration: none;
+    border: none;
+    padding: 0;
   }
 }
 
