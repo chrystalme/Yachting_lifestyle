@@ -1,4 +1,7 @@
 class VotesController < ApplicationController
+  
+  def index;  end
+
   def create
     @vote = current_user.votes.new(article_id: params[:article_id])
     if @vote.save

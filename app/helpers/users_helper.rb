@@ -2,7 +2,9 @@ module UsersHelper
   def show_featured
     output = ''
     featured_article = Article.featured
-    if featured_article.nil?
+    if Article.none?
+      output << '<h6><strong>You have no created articles</strong></h6>'
+    elsif featured_article.nil?
       art = Article.ordered_by_most_recent.first
       output << "#{cl_image_tag(art.image.key, width: 1000, crop: :scale)}
       <h6><strong>#{link_to(art.title, article_path(art))}</strong></h6>
