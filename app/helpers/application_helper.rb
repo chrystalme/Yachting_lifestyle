@@ -29,8 +29,8 @@ module ApplicationHelper
   def show_header
     output = ''
     output << if logged_in?
-                "<a href='/articles/new'> Welcome #{current_user.name}</a> 
-                | #{button_to 'Log Out', log_out_path, method: :delete }"
+                "<a href='/articles/new'> Welcome #{current_user.name}</a>
+                | #{button_to 'Log Out', log_out_path, method: :delete}"
               else
                 "#{link_to 'Register', sign_up_path} | #{link_to 'Login', log_in_path}"
               end
@@ -52,7 +52,7 @@ module ApplicationHelper
     if logged_in?
       if vote
         button_to('Unvote', article_vote_path(id: vote.id, article_id: article.id), method: :delete,
-                                                                                  class: 'btn btn-danger mb-2')
+                                                                                    class: 'btn btn-danger mb-2')
       else
         button_to('Vote', article_votes_path(article_id: article.id), method: :post, class: 'btn btn-primary mb-2')
       end
@@ -66,8 +66,8 @@ module ApplicationHelper
     if logged_in?
       if bookmark
         button_to('Remove bookmark', article_bookmark_path(id: bookmark.id, article_id: article.id),
-                method: :delete,
-                class: 'btn btn-danger')
+                  method: :delete,
+                  class: 'btn btn-danger')
       else
         button_to('Bookmark', article_bookmarks_path(article_id: article.id), method: :post, class: 'btn btn-primary')
       end
