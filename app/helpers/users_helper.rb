@@ -2,12 +2,12 @@ module UsersHelper
   def show_featured
     output = ''
     featured_article = Article.featured
-    if featured_article.present? && featured_article.image.attached?
+    if featured_article.present? 
       output << "#{cl_image_tag(featured_article.image.key, width: 1000, crop: :scale)}
       <h6><strong>#{link_to(featured_article.title, article_path(featured_article))}</strong></h6>
       <p> #{featured_article.text.truncate_words(30)}</p>"      
     else
-      output << '<h6><strong>You have no Featured articles. Get creating and voting.</strong></h6>'      
+      output << "<h6 class='anchor'><strong>You have no Featured articles. Get creating and voting.</strong></h6>"     
     end
     output.html_safe
   end

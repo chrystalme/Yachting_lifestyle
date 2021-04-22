@@ -136,6 +136,12 @@ footer {
   position: relative;
   width: 100%;
 
+  .anchor {
+    position: relative;
+    top: 15px;
+    left: 10px;
+  }
+
   img {
     height: 320px;
     width: 100%;

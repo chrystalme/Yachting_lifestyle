@@ -15,14 +15,11 @@ class Article < ApplicationRecord
 
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
 
-  scope :featured, -> { Article.find(Vote.group(:article_id).count.max_by { |_k, v| v }[0]) }
+  scope :featured, -> { Article.joins(:votes).group(:id).count.max_by { |_k, v| v } }
 
   scope :category, ->(name) { Article.joins(:categories).where(categories: { name: name }) }
 
-  scope :others, lambda {
-                   Article.where.not('id = ?', Vote.group(:article_id)
-                     .count.max_by { |_k, v| v }[0]).limit(4)
-                 }
+  scope :others, -> { Article.all.except(Article.joins(:votes).group(:id).count.max_by { |_k, v| v }).limit(4) }
 
   scope :user_bookmarks, lambda { |current_user|
                            includes(:author).joins(:bookmarks)
