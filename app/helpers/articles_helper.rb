@@ -31,7 +31,7 @@ module ArticlesHelper
 
   def show_prev_articles
     output = ''
-    if @my_articles.exists?
+    if @my_articles.present?
       @my_articles.each do |my_article|
         output << "<p>
         #{my_article.title}
@@ -47,7 +47,7 @@ module ArticlesHelper
 
   def show_bookmarked_articles
     output = ''
-    if @bookmarked_articles.exists?
+    if @bookmarked_articles.present?
       @bookmarked_articles.each do |my_bookmark|
         output << "<p>
         #{link_to(my_bookmark.title, article_path(my_bookmark))}

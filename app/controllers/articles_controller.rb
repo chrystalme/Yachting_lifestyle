@@ -1,13 +1,13 @@
 class ArticlesController < ApplicationController
   before_action :logged_in?, except: [:show]
-  # before_action :set_article, only: %i[show edit update destroy]
+  before_action :set_article, only: %i[show edit update destroy]
   def index
     @articles = Article.all.ordered_by_most_recent
   end
 
   def new
     @article = current_user.articles.build
-    @category_options = Category.all.map { |c| [c.name, c.id] }
+    # @category_options = Category.all.map{ |c| [c.name, c.id] }
     @my_articles = current_user.articles
     @bookmarked_articles = Article.user_bookmarks(current_user)
   end
@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.build(article_params)
     if @article.save
-      ArticleCategory.create!(article_id: @article.id, category_id: params[:category_id])
+      # ArticleCategory.create!(article_id: @article.id, category_id: params[:category_id])
       flash[:notice] = "#{@article.title} has been created successfully."
       redirect_to root_path
     else
@@ -23,12 +23,10 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show
-    @article = Article.find(params[:id])
+  def show    
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def update
@@ -38,6 +36,13 @@ class ArticlesController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+  end
+
+  def destroy
+    if @article.destroy
+      flash[:alert] = "#{@article.title} has been deleted successfully."
+      redirect_to root_path
     end
   end
 
@@ -51,6 +56,7 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :text, :image, :category_id)
   end
 
-  # def set_article
-  # end
+  def set_article
+  @article = Article.find(params[:id])
+  end
 end

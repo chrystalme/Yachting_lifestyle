@@ -16,7 +16,7 @@
           </span>
           <%= f.text_area :text, placeholder: 'Article title',rows: 8, class: 'form-control' %>
         </div>
-        <%= select_tag(:category_id, options_for_select(@category_options), class: 'mt-2 form-select')  %>
+        <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: 'Select Category'},{class: 'mt-2 form-select'}  %>
         <div class='input-group mt-2'>
           <span class='input-group-text'>
             <i class="fas fa-camera"></i>

@@ -6,7 +6,7 @@ module UsersHelper
       output << '<h6><strong>You have no created articles. Get creating.</strong></h6>'
     elsif featured_article.nil?
       art = Article.ordered_by_most_recent.first
-      output << "#{image_tag(art.image.key, width: 1000, crop: :scale)}
+      output << "#{cl_image_tag(art.image.key, width: 1000, crop: :scale)}
       <h6><strong>#{link_to(art.title, article_path(art))}</strong></h6>
       <p> #{art.text.truncate_words(30)}</p>"
     else
@@ -29,8 +29,8 @@ module UsersHelper
           <p>
             #{article.text.truncate_words(5)}
           </p>
-          <h5 class=''>#{link_to(article.categories.pluck(:name)[0],
-                                 category_path(article.categories.pluck(:id)[0]))} </h5>
+          <h5 class=''>#{link_to(article.category.name,
+                                 category_path(article.category.id))} </h5>
         </div>
       </div>"
     end

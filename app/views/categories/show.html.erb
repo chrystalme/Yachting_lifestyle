@@ -1,6 +1,6 @@
 <div class='category text-secondary'>
   <ul class='double mr-0'>
-    <% @article = Article.category(Category.where('id = ?', params[:id]).pluck(:name)[0])%>
+    <% @article = Article.where('category_id = ?', params[:id])%>
     <% @article.each do |art_cat| %>
     <li>
       <div class='d-flex flex-row mb-3 bg-white'>
