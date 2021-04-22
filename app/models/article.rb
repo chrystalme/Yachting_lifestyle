@@ -19,10 +19,11 @@ class Article < ApplicationRecord
 
   scope :category, ->(name) { Article.joins(:categories).where(categories: { name: name }) }
 
-  scope :others, -> { Article.all.except(Article.joins(:votes).group(:id).count.max_by { |_k, v| v }).limit(4) }
+  scope :others, -> { Article.all.where.not('id = ?', Article.joins(:votes).group(:id).count.max_by { |_k, v| v }[0]).limit(4) }
 
   scope :user_bookmarks, lambda { |current_user|
                            includes(:author).joins(:bookmarks)
                              .where(' user_id = ?', current_user.id.to_s)
                          }
+                       
 end

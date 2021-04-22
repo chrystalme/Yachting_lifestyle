@@ -12,7 +12,7 @@ module ArticlesHelper
                 </div>
                   <div class='col'>
                         <div class='card-body text-black'>
-                          <h4 class='card-title '> #{link_to(article.title, article_path(article), class: 'title')}</h4>
+                          <h4 class='card-title '> #{link_to(article.title.truncate_words(5), article_path(article), class: 'title')}</h4>
                           <p class='card-text text-black'>
                             #{article.text.truncate_words(7)}
                           </p>

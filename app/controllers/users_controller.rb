@@ -3,11 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[edit show destroy update]
   def index
     @users = User.all
-    respond_to do |format|
-      format.html
-      format.xml { render xml: @users }
-      format.json { render json: @users }
-    end
+    @featured_article = Article.where('id = ? ', Article.featured[0])
   end
 
   def new

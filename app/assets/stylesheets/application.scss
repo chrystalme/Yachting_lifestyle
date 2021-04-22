@@ -146,12 +146,18 @@ footer {
     height: 320px;
     width: 100%;
   }
+}
+
+.feature-sub {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 
   h6 {
-    bottom: 3rem;
+    bottom: 1.5rem;
     color: rgb(255, 99, 71);
     left: 0.5rem;
-    position: absolute;
+    position: relative;
   }
 
   p {
@@ -159,12 +165,16 @@ footer {
     color: rgb(255, 255, 255);
     font-size: small;
     left: 0.5rem;
-    position: absolute;
+    position: relative;
   }
 }
 
 a:hover {
   color: rgb(255, 99, 71);
+}
+
+.btn {
+  padding: 0 10px;
 }
 
 /* stylelint-disable */
