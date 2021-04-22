@@ -23,11 +23,9 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show    
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @article = current_user.articles.build(article_params)
@@ -40,10 +38,10 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    if @article.destroy
-      flash[:alert] = "#{@article.title} has been deleted successfully."
-      redirect_to root_path
-    end
+    return unless @article.destroy
+
+    flash[:alert] = "#{@article.title} has been deleted successfully."
+    redirect_to root_path
   end
 
   def bookmarks
@@ -57,6 +55,6 @@ class ArticlesController < ApplicationController
   end
 
   def set_article
-  @article = Article.find(params[:id])
+    @article = Article.find(params[:id])
   end
 end
