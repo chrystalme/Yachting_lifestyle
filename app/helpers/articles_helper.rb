@@ -33,14 +33,10 @@ module ArticlesHelper
     output = ''
     if @my_articles.present?
       @my_articles.each do |my_article|
-        output << "<p>
-        #{my_article.title}
-      </p>"
-      end
+        output << "<p> #{link_to(my_article.title, article_path(my_article))} </p>"
+      end      
     else
-      output << '<p>
-        You have no articles yet.
-      </p>'
+      output << "<p> You have no articles yet. </p>"
     end
     output.html_safe
   end
