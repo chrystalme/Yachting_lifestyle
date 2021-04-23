@@ -4,7 +4,7 @@
     <% @article.each do |art_cat| %>
     <li>
       <div class='d-flex flex-row mb-3 bg-white'>
-        <%= image_tag(art_cat.image.variant(resize_to_limit: [500, 500]))%>
+        <%= cl_image_tag(art_cat.image.key, width: 500, crop: :scale)%>
         <div class='d-flex flex-column mx-2'>
           <strong class='article-header'><%=link_to(art_cat.title.truncate_words(15), article_path(art_cat.id)) %></strong>
           <p><%= art_cat.text.truncate_words(5) %></p>
