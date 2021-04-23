@@ -13,6 +13,7 @@ module UsersHelper
 
   def show_others
     output = ''
+    return unless Article.count.positive?
     Article.others.ordered_by_most_recent.each do |article|
       next unless article.image.attached?
 
