@@ -12,7 +12,9 @@ module ArticlesHelper
                 </div>
                   <div class='col'>
                         <div class='card-body text-black'>
-                          <h4 class='card-title '> #{link_to(article.title.truncate_words(5), article_path(article), class: 'title')}</h4>
+                          <h4 class='card-title'> #{link_to(article.title.truncate_words(5),
+                                                            article_path(article), class: 'title')}
+                           </h4>
                           <p class='card-text text-black'>
                             #{article.text.truncate_words(7)}
                           </p>
@@ -34,9 +36,9 @@ module ArticlesHelper
     if @my_articles.present?
       @my_articles.each do |my_article|
         output << "<p> #{link_to(my_article.title, article_path(my_article))} </p>"
-      end      
+      end
     else
-      output << "<p> You have no articles yet. </p>"
+      output << '<p> You have no articles yet. </p>'
     end
     output.html_safe
   end

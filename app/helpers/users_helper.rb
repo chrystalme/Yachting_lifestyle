@@ -3,7 +3,10 @@ module UsersHelper
     output = ''
     output << if @featured_article.present?
                 "#{image_tag(@featured_article.first.image.variant(resize_to_limit: [1000, 300]))}
-      <div class='feature-sub'><h6><strong>#{link_to(@featured_article.first.title, article_path(@featured_article.first))}</strong></h6>
+      <div class='feature-sub'>
+      <h6>
+      <strong>#{link_to(@featured_article.first.title, article_path(@featured_article.first))}</strong>
+      </h6>
       <p> #{@featured_article.first.text.truncate_words(30)}</p></div>"
               else
                 "<h6 class='anchor'><strong>You have no Featured articles. Get creating and voting.</strong></h6>"
