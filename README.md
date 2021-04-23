@@ -55,10 +55,12 @@ Set up project using the above specifications
 - run `bundle install ` to install dependencies
 - run `yarn add ` to install dependencies
 - run `rails db:migrate ` to create schema
+- run `rails db:seed` to seed some data to the database
 - use `rails webpacker:install` to install webpacker
 - use `rails s` to run the rails server
 - use `rails c` to go to the console
 - add new category by running `Category.create!(name: 'Name of Category')`. This helps to be able to create article.
+- On the index page, go to the Welcome <username> to create an article after login
 
 ## Live Link
 Yachting-lifestyle: [yachtinglifestyle](http://yachting-lifestyle.herokuapp.com/)
