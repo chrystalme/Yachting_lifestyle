@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :articles, class_name: :Article, foreign_key: :author_id
-  has_many :votes # , through: : articles
+  has_many :votes
   has_many :bookmarks, foreign_key: 'user_id', dependent: :destroy
   has_many :bookmarked_articles, through: :bookmarks, source: :article
 
