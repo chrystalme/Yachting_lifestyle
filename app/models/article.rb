@@ -25,5 +25,4 @@ class Article < ApplicationRecord
                            includes(:author).joins(:bookmarks)
                              .where(' user_id = ?', current_user.id.to_s)
                          }
-                       
 end
