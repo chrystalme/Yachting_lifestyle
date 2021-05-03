@@ -1,7 +1,7 @@
 <div class='d-flex flex-row text-white'>
 
   <div class=''>
-    <%= image_tag(@article.image.variant(resize_to_limit: [500, 500]))%>
+    <%= cl_image_tag(@article.image, width: 200, height: 200)%>
   </div>
   <div class='d-flex flex-column mx-2'>
     <strong><%= @article.title %></strong>

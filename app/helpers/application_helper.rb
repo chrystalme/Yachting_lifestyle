@@ -9,7 +9,8 @@ module ApplicationHelper
     end
     if flash[:alert]
       output << "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
-      #{flash[:alert]}<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+      #{flash[:alert]}
+      <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
       </div>"
     end
     output.html_safe
@@ -28,12 +29,20 @@ module ApplicationHelper
   def show_header
     output = ''
     output << if logged_in?
-                "<a href='/articles/new'> Welcome #{current_user.name}</a> | #{link_to 'Log Out', log_out_path,
-                                                                                       method: :delete
-                                                                             }"
+                "<a href='/articles/new'> Welcome #{current_user.name}</a>
+                | #{button_to 'Log Out', log_out_path, method: :delete}"
               else
                 "#{link_to 'Register', sign_up_path} | #{link_to 'Login', log_in_path}"
               end
+    output.html_safe
+  end
+
+  def show_nav
+    output = ''
+    output << (link_to 'Home', articles_path, class: 'px-1').to_s if logged_in?
+    Category.limit(4).each do |cat|
+      output << (link_to cat.name, category_path(cat), class: 'px-1').to_s
+    end
     output.html_safe
   end
 
@@ -42,10 +51,25 @@ module ApplicationHelper
     vote = Vote.find_by(article: article, user: current_user)
     if logged_in?
       if vote
-        link_to('Unvote', article_vote_path(id: vote.id, article_id: article.id), method: :delete,
-                                                                                  class: 'btn btn-danger')
+        button_to('Unvote', article_vote_path(id: vote.id, article_id: article.id), method: :delete,
+                                                                                    class: 'btn btn-danger mb-2')
       else
-        link_to('Vote', article_votes_path(article_id: article.id), method: :post, class: 'btn btn-primary')
+        button_to('Vote', article_votes_path(article_id: article.id), method: :post, class: 'btn btn-primary mb-2')
+      end
+    end
+  end
+  # rubocop:enable Style/GuardClause
+
+  # rubocop:disable Style/GuardClause
+  def show_bookmark_btn(article)
+    bookmark = Bookmark.find_by(article: article, user: current_user)
+    if logged_in?
+      if bookmark
+        button_to('Remove bookmark', article_bookmark_path(id: bookmark.id, article_id: article.id),
+                  method: :delete,
+                  class: 'btn btn-danger')
+      else
+        button_to('Bookmark', article_bookmarks_path(article_id: article.id), method: :post, class: 'btn btn-primary')
       end
     end
   end

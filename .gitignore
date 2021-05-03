@@ -36,3 +36,9 @@ yarn-debug.log*
 .yarn-integrity
 .eslintrc.yml
 .browserslistrc
+node_modules/.bin/cssesc
+node_modules/.bin/mkdirp
+package-lock.json
+
+.DS_Store
+tmp
